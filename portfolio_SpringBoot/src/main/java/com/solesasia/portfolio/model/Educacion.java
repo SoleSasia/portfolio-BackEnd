@@ -16,28 +16,22 @@ public class Educacion implements Serializable {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
-    private String titulo;
-    private String nombreInstitucion;
-    private String fechaInicio;
-    private String fechaFin;
-    private String urlLogo;
-    private String descripcion;
+    private String tituloEdu;
+    private String periodoEdu;
+    private String nombreInstituEdu;
+    private String descripcionEdu;
+    private String urlLogoEdu;
 
     public Educacion() {
     }
 
-    public Educacion(String titulo, String nombreInstitucion, String fechaInicio, String fechaFin, String urlLogo, String descripcion) {
+    public Educacion(Long id, String tituloEdu, String periodoEdu, String nombreInstituEdu, String descripcionEdu, String urlLogoEdu) {
         this.id = id;
-        this.titulo = titulo;
-        this.nombreInstitucion = nombreInstitucion;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.urlLogo = urlLogo;
-        this.descripcion = descripcion;
+        this.tituloEdu = tituloEdu;
+        this.periodoEdu = periodoEdu;
+        this.nombreInstituEdu = nombreInstituEdu;
+        this.descripcionEdu = descripcionEdu;
+        this.urlLogoEdu = urlLogoEdu;
     }
-
-   
-    
-    
     
 }
