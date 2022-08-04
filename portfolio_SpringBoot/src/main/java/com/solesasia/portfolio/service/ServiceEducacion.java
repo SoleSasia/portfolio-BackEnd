@@ -26,17 +26,18 @@ public class ServiceEducacion implements IServiceEducacion {
 
     //Read - Lectura
     @Override
-    public List<Educacion> verEducaciones() {
+    public List<Educacion> listarEducaciones() {
         return repoEdu.findAll();
     }
 
     //Update - Actualizar
     @Override
-    public void actualizarEducacion(Educacion edu) {
+    public void editarEducacion(Educacion edu) {
         repoEdu.save(edu);
     }    
 
     //Delete - Baja
+    @Override
     public void borrarEducacion(Long id) {
         repoEdu.deleteById(id);
     }

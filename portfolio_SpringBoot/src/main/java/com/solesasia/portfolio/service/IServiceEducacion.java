@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface IServiceEducacion {
  
-    public List<Educacion> verEducaciones();
+    public List<Educacion> listarEducaciones();
     
     public void crearEducacion(Educacion edu);
     
-    public void actualizarEducacion(Educacion edu);
+    public void editarEducacion(Educacion edu);
     
     public void borrarEducacion(Long id);
     
