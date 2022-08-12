@@ -1,22 +1,20 @@
 package com.solesasia.portfolio.service;
 
-//esta clase implementa la interfaz donde están declarados los métodos CRUD
 import com.solesasia.portfolio.model.Educacion;
-import com.solesasia.portfolio.repository.RepEducacion;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import com.solesasia.portfolio.repository.EducacionRepository;
 
+//esta clase implementa la interfaz donde están declarados los métodos CRUD
 @Service
 public class EducacionService implements IEducacionService {
 
     /* Inyecto el repositorio 
-    La interfaz RepEducacion (en la capa repository) será quien haga la conexion 
+    La interfaz EducacionRepository (en la capa repository) será quien haga la conexion 
     con JPA y será la intermediaria entre la base de datos y todos los metodos de JPA*/
     @Autowired
-    public RepEducacion repoEdu;
+    public EducacionRepository repoEdu;
 
     //Create - Alta
     @Override
