@@ -19,6 +19,19 @@ public class Proyecto implements Serializable {
     private String imgUrl;
     private String repoUrl;
     private String liveUrl;
-    private Long persona_id;
+    private Long personaId;
+
+    public Proyecto() {
+    }
+
+    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto, String imgUrl, String repoUrl, String liveUrl, Long personaId) {
+        this.id = id;
+        this.nombreProyecto = nombreProyecto;
+        this.descripcionProyecto = descripcionProyecto;
+        this.imgUrl = imgUrl;
+        this.repoUrl = repoUrl;
+        this.liveUrl = liveUrl;
+        this.personaId = personaId;
+    }
     
 }

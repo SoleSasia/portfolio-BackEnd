@@ -16,6 +16,16 @@ public class HabilidadBlanda implements Serializable {
     private Long id;
     private String nombreHabilidad;
     private String urlIcono;
-    private Long persona_id;
+    private Long personaId;
+
+    public HabilidadBlanda() {
+    }
+
+    public HabilidadBlanda(Long id, String nombreHabilidad, String urlIcono, Long personaId) {
+        this.id = id;
+        this.nombreHabilidad = nombreHabilidad;
+        this.urlIcono = urlIcono;
+        this.personaId = personaId;
+    }
     
 }

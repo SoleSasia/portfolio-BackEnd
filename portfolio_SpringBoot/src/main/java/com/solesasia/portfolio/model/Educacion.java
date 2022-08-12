@@ -20,19 +20,19 @@ public class Educacion implements Serializable {
     private String institucionEdu;
     private String descripcionEdu;
     private String urlLogoEdu;
-    private Long persona_id;
+    private Long personaId;
 
     public Educacion() {
     }
 
-    public Educacion(Long id, String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long persona_id) {
+    public Educacion(Long id, String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long personaId) {
         this.id = id;
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
         this.institucionEdu = institucionEdu;
         this.descripcionEdu = descripcionEdu;
         this.urlLogoEdu = urlLogoEdu;
-        this.persona_id = persona_id;
+        this.personaId = personaId;
     }
     
 }

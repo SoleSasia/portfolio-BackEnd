@@ -16,7 +16,18 @@ public class HabilidadTecnica implements Serializable {
     private Long id;
     private String nombreHabilidad;
     private String urlIcono;
-    private Long persona_id;
-    private Long nivel_id;
+    private Long personaId;
+    private Long nivelId;
+
+    public HabilidadTecnica() {
+    }
+
+    public HabilidadTecnica(Long id, String nombreHabilidad, String urlIcono, Long personaId, Long nivelId) {
+        this.id = id;
+        this.nombreHabilidad = nombreHabilidad;
+        this.urlIcono = urlIcono;
+        this.personaId = personaId;
+        this.nivelId = nivelId;
+    }
     
 }

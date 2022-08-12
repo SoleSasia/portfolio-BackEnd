@@ -20,19 +20,19 @@ public class Experiencia implements Serializable {
     private String organismoExpe;
     private String descripcionExpe;
     private String urlLogoExpe;
-    private Long persona_id;
+    private Long personaId;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long id, String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe, Long persona_id) {
+    public Experiencia(Long id, String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe, Long personaId) {
         this.id = id;
         this.puestoExpe = puestoExpe;
         this.periodoExpe = periodoExpe;
         this.organismoExpe = organismoExpe;
         this.descripcionExpe = descripcionExpe;
         this.urlLogoExpe = urlLogoExpe;
-        this.persona_id = persona_id;
+        this.personaId = personaId;
     }
 
 }

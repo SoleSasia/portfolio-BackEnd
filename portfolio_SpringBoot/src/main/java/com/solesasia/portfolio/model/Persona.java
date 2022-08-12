@@ -15,17 +15,29 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private String apellido;
+    private String ocupacion;
+    private String bannerUrl;
+    private String email;
+    private String linkedinUrl;
+    private String githubUrl;
+    private String descripcion;
+    private String imgUrl;
+    private Long usuarioId;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String apellido) {
+    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, Long usuarioId) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.ocupacion = ocupacion;
+        this.bannerUrl = bannerUrl;
+        this.email = email;
+        this.linkedinUrl = linkedinUrl;
+        this.githubUrl = githubUrl;
+        this.descripcion = descripcion;
+        this.imgUrl = imgUrl;
+        this.usuarioId = usuarioId;
     }
-    
-    
-    
+
 }

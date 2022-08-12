@@ -15,5 +15,13 @@ public class NivelHabilidad implements Serializable {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String nivelHabilidad;
-    
+
+    public NivelHabilidad() {
+    }
+
+    public NivelHabilidad(Long id, String nivelHabilidad) {
+        this.id = id;
+        this.nivelHabilidad = nivelHabilidad;
+    }
+
 }
