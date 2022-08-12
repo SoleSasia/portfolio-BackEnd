@@ -5,7 +5,7 @@ package com.solesasia.portfolio.service;
 import com.solesasia.portfolio.model.Educacion;
 import java.util.List;
 
-public interface IServiceEducacion {
+public interface IEducacionService {
  
     public List<Educacion> listarEducaciones();
     

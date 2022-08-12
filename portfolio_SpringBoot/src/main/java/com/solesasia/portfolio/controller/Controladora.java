@@ -1,7 +1,6 @@
 package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.model.Educacion;
-import com.solesasia.portfolio.service.IServiceEducacion;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,45 +13,48 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.solesasia.portfolio.service.IEducacionService;
 
 @CrossOrigin (origins = "http://localhost:4200")
 @RestController
 //AGREGAR REQUESTMAPPING EN FRONT
 //@RequestMapping("/educacion")
-public class EducacionControl {
+public class Controladora {
     
     @Autowired
-    private IServiceEducacion serviEdu;
+    private IEducacionService serviEdu;
     
     //Create
-    @PostMapping ("/nueva")
-    public void agregarEducacion(@RequestBody Educacion edu){
+    @PostMapping ("/nuevaEdu")
+    public String agregarEducacion(@RequestBody Educacion edu){
         serviEdu.crearEducacion(edu);
+        return "El elemento educación fue creado satisfactoriamente";
     }
     
     //Read - Lista
-    @GetMapping ("/ver")
+    @GetMapping ("/listaEdu")
     @ResponseBody
     public List<Educacion> listarEducaciones(){
         return serviEdu.listarEducaciones();
     }
     
     //Buscar
-    @GetMapping ("/ver/{id}")
+    @GetMapping ("/verEdu/{id}")
     @ResponseBody
     public Educacion buscarEducacion(@PathVariable Long id){
         return serviEdu.buscarEducacion(id);
     }
     
     //Update
-    @PutMapping ("/actualizar/{id}")
+    @PutMapping ("/editarEdu/{id}")
     public void editarEducacion(@PathVariable Long id, @RequestBody Educacion edu){
         serviEdu.crearEducacion(edu);
     }
     
     //Delete
-    @DeleteMapping("/borrar/{id}")
-    public void borrarEducacion(@PathVariable Long id){
+    @DeleteMapping("/borrarEdu/{id}")
+    public String borrarEducacion(@PathVariable Long id){
         serviEdu.borrarEducacion(id);
+        return "El elemento educación fue eliminado satisfactoriamente";
     }
 }

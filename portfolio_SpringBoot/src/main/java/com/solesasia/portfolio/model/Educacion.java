@@ -26,7 +26,7 @@ public class Educacion implements Serializable {
     }
 
     public Educacion(Long id, String tituloEdu, String periodoEdu, String nombreInstituEdu, String descripcionEdu, String urlLogoEdu) {
-        this.id = id;//TO DO revisar si es correcto colocar el id en el constructor
+        this.id = id;
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
         this.nombreInstituEdu = nombreInstituEdu;

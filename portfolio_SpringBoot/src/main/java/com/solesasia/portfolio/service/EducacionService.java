@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServiceEducacion implements IServiceEducacion {
+public class EducacionService implements IEducacionService {
 
     /* Inyecto el repositorio 
     La interfaz RepEducacion (en la capa repository) será quien haga la conexion 
