@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Setter @Getter
-public class Portfolio {
+public class PortfolioDto {
     
     private Persona persona;
     private List<Educacion> listaEducacion;

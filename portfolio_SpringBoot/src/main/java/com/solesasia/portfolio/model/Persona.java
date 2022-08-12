@@ -7,14 +7,13 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter @Getter
 @Entity
+@Setter @Getter
 public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
     private String nombre;
     private String apellido;
 

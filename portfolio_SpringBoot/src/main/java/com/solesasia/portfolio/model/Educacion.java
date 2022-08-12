@@ -1,7 +1,6 @@
 
 package com.solesasia.portfolio.model;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +10,7 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class Educacion implements Serializable {
+public class Educacion {
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
