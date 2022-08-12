@@ -1,6 +1,7 @@
 
 package com.solesasia.portfolio.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,27 +11,28 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class Educacion {
+public class Educacion implements Serializable {
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    
     private String tituloEdu;
     private String periodoEdu;
-    private String nombreInstituEdu;
+    private String institucionEdu;
     private String descripcionEdu;
     private String urlLogoEdu;
+    private Long persona_id;
 
     public Educacion() {
     }
 
-    public Educacion(Long id, String tituloEdu, String periodoEdu, String nombreInstituEdu, String descripcionEdu, String urlLogoEdu) {
+    public Educacion(Long id, String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long persona_id) {
         this.id = id;
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
-        this.nombreInstituEdu = nombreInstituEdu;
+        this.institucionEdu = institucionEdu;
         this.descripcionEdu = descripcionEdu;
         this.urlLogoEdu = urlLogoEdu;
+        this.persona_id = persona_id;
     }
     
 }
