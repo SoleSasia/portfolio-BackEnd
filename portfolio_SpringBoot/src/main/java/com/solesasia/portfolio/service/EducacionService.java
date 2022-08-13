@@ -31,14 +31,12 @@ public class EducacionService implements IEducacionService {
     //Update - Actualizar
     @Override
     public String editarEducacion(Long id, Educacion edu) {
-        
-        if (repoEdu.existsById(edu.getId())) {
-            edu.setId(id);
-            repoEdu.save(edu);
-            return "El elemento educación fue modificado satisfactoriamente.";
-        }else {
-            return "El elemento educación no fue encontrado en la base de datos.";
+        if (!repoEdu.existsById(id)) {
+            return "El id del elemento educación no existe.";
         }
+        edu.setId(id);
+        repoEdu.save(edu);
+        return "El elemento educación fue modificado satisfactoriamente.";
     }
 
     //Delete - Baja

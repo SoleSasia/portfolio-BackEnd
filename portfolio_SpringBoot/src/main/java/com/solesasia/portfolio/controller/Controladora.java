@@ -2,6 +2,7 @@ package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
+import com.solesasia.portfolio.model.HabilidadTecnica;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.solesasia.portfolio.service.IEducacionService;
 import com.solesasia.portfolio.service.IExperienciaService;
+import com.solesasia.portfolio.service.IHabilidadTecnicaService;
 
 @CrossOrigin (origins = "http://localhost:4200")
 @RestController
@@ -23,9 +25,36 @@ public class Controladora {
     
     @Autowired
     private IEducacionService serviEdu;
+    @Autowired
     private IExperienciaService serviExpe;
+    @Autowired
+    private IHabilidadTecnicaService serviHabTecnica;
     
-    // CRUD EDUCACION //
+    // CRUD HABILIDAD TECNICA //
+    @PostMapping ("/nuevaHabTecnica")
+    public void crearHabTecnica(@RequestBody HabilidadTecnica habTecnica){
+        serviHabTecnica.crearHabTecnica(habTecnica);
+    }
+    
+    @GetMapping ("/listaHabTecnicas")
+    @ResponseBody
+    public List<HabilidadTecnica> listarHabTecnicas(){
+        return serviHabTecnica.listarHabTecnicas();
+    }
+    
+    @PutMapping ("/editarHabTecnica/{id}")
+    public String editarHabTecnica(@PathVariable Long id, @RequestBody HabilidadTecnica habTecnica) {
+        return serviHabTecnica.editarHabTecnica(id, habTecnica);
+    }
+    
+    @DeleteMapping ("borrarHabTecnica/{id}")
+    public void borrarHabTecnica(@PathVariable Long id) {
+        serviHabTecnica.borrarHabTecnica(id);
+    }
+    
+
+
+// CRUD EDUCACION //
     
     @PostMapping ("/nuevaEdu")
     public String agregarEducacion(@RequestBody Educacion edu){
