@@ -8,30 +8,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ExperienciaService {
+public class ExperienciaService implements IExperienciaService {
     
     @Autowired
     public ExperienciaRepository repoExpe;
+
     
-    public void crearExperiencia(Experiencia expe){
+    @Override
+    public void crearExperiencia(Experiencia expe) {
         repoExpe.save(expe);
     }
-    
-    public List<Experiencia> listarExperiencias(){
-        return repoExpe.findAll();
+
+    @Override
+    public List<Experiencia> listarExperiencias() {
+       return repoExpe.findAll();
     }
-    
-    public String editarExperiencia(Long id, Experiencia expe){
-        expe.setId(id);
-        if (expe != null && repoExpe.existsById(expe.getId())) {
+
+    @Override
+    public String editarExperiencia(Long id, Experiencia expe) {
+        
+        if (repoExpe.existsById(expe.getId())) {
+            expe.setId(id);
             repoExpe.save(expe);
             return "El elemento experiencia fue modificado satisfactoriamente.";
         }else {
             return "El elemento experiencia no fue encontrado en la base de datos.";
         }
     }
-    
-    public void borrarExperiencia(Long id){
+
+    @Override
+    public void borrarExperiencia(Long id) {
         repoExpe.deleteById(id);
     }
+    
+    
 }
