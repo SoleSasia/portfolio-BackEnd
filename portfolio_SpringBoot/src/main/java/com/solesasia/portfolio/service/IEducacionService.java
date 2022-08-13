@@ -1,21 +1,18 @@
 package com.solesasia.portfolio.service;
 
-//declaro los métodos (CRUD) y NO los implemento, eso será función de ServiceEducacion
 
 import com.solesasia.portfolio.model.Educacion;
 import java.util.List;
 
 public interface IEducacionService {
- 
-    public List<Educacion> listarEducaciones();
-    
+
+//declaro los métodos (CRUD) sin implementar, eso será función de ServiceEducacion
     public void crearEducacion(Educacion edu);
+    
+    public List<Educacion> listarEducaciones();
     
     public String editarEducacion(Long id, Educacion edu);
     
     public void borrarEducacion(Long id);
-    
-    /*
-    public Educacion buscarEducacion(Long id);
-    */
+   
 }

@@ -49,11 +49,4 @@ public class EducacionService implements IEducacionService {
         return new ResponseEntity (new Mensaje("La educacion ha sido elimindada"),HttpStatus.OK)
     };   */
 
-    /*
-    //Buscar
-    @Override
-    public Educacion buscarEducacion(Long id) {
-        return repoEdu.findById(id).orElse(null);
-    }
-    */
 }
