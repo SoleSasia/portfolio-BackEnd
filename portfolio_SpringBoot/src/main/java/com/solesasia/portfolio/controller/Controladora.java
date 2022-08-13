@@ -17,8 +17,7 @@ import com.solesasia.portfolio.service.IEducacionService;
 
 @CrossOrigin (origins = "http://localhost:4200")
 @RestController
-//AGREGAR REQUESTMAPPING EN FRONT
-//@RequestMapping("/educacion")
+
 public class Controladora {
     
     @Autowired
@@ -28,7 +27,7 @@ public class Controladora {
     @PostMapping ("/nuevaEdu")
     public String agregarEducacion(@RequestBody Educacion edu){
         serviEdu.crearEducacion(edu);
-        return "El elemento educación fue creado satisfactoriamente";
+        return "El elemento educación fue creado satisfactoriamente.";
     }
     
     //Read - Lista
@@ -38,23 +37,25 @@ public class Controladora {
         return serviEdu.listarEducaciones();
     }
     
+    /*
     //Buscar
     @GetMapping ("/verEdu/{id}")
     @ResponseBody
     public Educacion buscarEducacion(@PathVariable Long id){
         return serviEdu.buscarEducacion(id);
     }
+    */
     
     //Update
     @PutMapping ("/editarEdu/{id}")
-    public void editarEducacion(@PathVariable Long id, @RequestBody Educacion edu){
-        serviEdu.crearEducacion(edu);
+    public String editarEducacion(@PathVariable Long id, @RequestBody Educacion edu){
+        return serviEdu.editarEducacion(id, edu);
     }
     
     //Delete
     @DeleteMapping("/borrarEdu/{id}")
     public String borrarEducacion(@PathVariable Long id){
         serviEdu.borrarEducacion(id);
-        return "El elemento educación fue eliminado satisfactoriamente";
+        return "El elemento educación fue eliminado satisfactoriamente.";
     }
 }

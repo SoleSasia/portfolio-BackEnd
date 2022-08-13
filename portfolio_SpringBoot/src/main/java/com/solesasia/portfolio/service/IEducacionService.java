@@ -11,10 +11,11 @@ public interface IEducacionService {
     
     public void crearEducacion(Educacion edu);
     
-    public void editarEducacion(Educacion edu);
+    public String editarEducacion(Long id, Educacion edu);
     
     public void borrarEducacion(Long id);
     
+    /*
     public Educacion buscarEducacion(Long id);
-    
+    */
 }

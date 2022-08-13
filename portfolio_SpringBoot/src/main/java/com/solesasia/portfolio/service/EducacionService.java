@@ -30,9 +30,15 @@ public class EducacionService implements IEducacionService {
 
     //Update - Actualizar
     @Override
-    public void editarEducacion(Educacion edu) {
-        repoEdu.save(edu);
-    }    
+    public String editarEducacion(Long id, Educacion edu) {
+        edu.setId(id);
+        if (edu != null && repoEdu.existsById(edu.getId())) {
+            repoEdu.save(edu);
+            return "El elemento educación fue modificado satisfactoriamente.";
+        }else {
+            return "El elemento educación no fue encontrado en la base de datos.";
+        }
+    }
 
     //Delete - Baja
     @Override
@@ -43,10 +49,11 @@ public class EducacionService implements IEducacionService {
         return new ResponseEntity (new Mensaje("La educacion ha sido elimindada"),HttpStatus.OK)
     };   */
 
+    /*
     //Buscar
     @Override
     public Educacion buscarEducacion(Long id) {
         return repoEdu.findById(id).orElse(null);
     }
-
+    */
 }
