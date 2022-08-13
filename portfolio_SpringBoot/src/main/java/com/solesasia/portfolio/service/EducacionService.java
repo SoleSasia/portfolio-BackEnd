@@ -31,8 +31,9 @@ public class EducacionService implements IEducacionService {
     //Update - Actualizar
     @Override
     public String editarEducacion(Long id, Educacion edu) {
-        edu.setId(id);
-        if (edu != null && repoEdu.existsById(edu.getId())) {
+        
+        if (repoEdu.existsById(edu.getId())) {
+            edu.setId(id);
             repoEdu.save(edu);
             return "El elemento educación fue modificado satisfactoriamente.";
         }else {

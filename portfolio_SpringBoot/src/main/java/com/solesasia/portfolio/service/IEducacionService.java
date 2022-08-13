@@ -14,5 +14,4 @@ public interface IEducacionService {
     public String editarEducacion(Long id, Educacion edu);
     
     public void borrarEducacion(Long id);
-   
 }
