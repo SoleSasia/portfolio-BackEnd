@@ -2,6 +2,7 @@ package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
+import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.HabilidadTecnica;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,20 +18,45 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.solesasia.portfolio.service.IEducacionService;
 import com.solesasia.portfolio.service.IExperienciaService;
+import com.solesasia.portfolio.service.IHabilidadBlandaService;
 import com.solesasia.portfolio.service.IHabilidadTecnicaService;
 
 @CrossOrigin (origins = "http://localhost:4200")
 @RestController
 public class Controladora {
     
-    @Autowired
-    private IEducacionService serviEdu;
-    @Autowired
-    private IExperienciaService serviExpe;
-    @Autowired
-    private IHabilidadTecnicaService serviHabTecnica;
+    @Autowired private IEducacionService serviEdu;
+    @Autowired private IExperienciaService serviExpe;
+    @Autowired private IHabilidadTecnicaService serviHabTecnica;
+    @Autowired private IHabilidadBlandaService serviHabBlanda;
     
-    // CRUD HABILIDAD TECNICA //
+
+// ABM HABILIDAD BLANDA // LLEVAR R A PORTFOLIODTO
+    
+    @PostMapping ("/nuevaHabBlanda")
+    public void crearHabBlanda(@RequestBody HabilidadBlanda habBlanda){
+        serviHabBlanda.crearHabBlanda(habBlanda);
+    }
+    
+    @GetMapping ("ListaHabBlandas")
+    @ResponseBody
+    public List<HabilidadBlanda> listarHabBlandas(){
+        return serviHabBlanda.listarHabBlandas();
+    }
+    
+    @PutMapping ("/editarHabBlanda/{id}")
+    public String editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
+        return serviHabBlanda.editarHabBlanda(id, habBlanda);
+    }
+    
+    @DeleteMapping ("/borrarHabBlanda/{id}")
+    public void borrarHabBlanda(@PathVariable Long id){
+        serviHabBlanda.borrarHabBlanda(id);
+    }
+    
+    
+// CRUD HABILIDAD TECNICA //
+    
     @PostMapping ("/nuevaHabTecnica")
     public void crearHabTecnica(@RequestBody HabilidadTecnica habTecnica){
         serviHabTecnica.crearHabTecnica(habTecnica);
@@ -50,8 +76,7 @@ public class Controladora {
     @DeleteMapping ("borrarHabTecnica/{id}")
     public void borrarHabTecnica(@PathVariable Long id) {
         serviHabTecnica.borrarHabTecnica(id);
-    }
-    
+    }    
 
 
 // CRUD EDUCACION //
@@ -79,7 +104,8 @@ public class Controladora {
         return "El elemento educación fue eliminado satisfactoriamente.";
     }
     
-    // CRUD EXPERIENCIA //
+
+// CRUD EXPERIENCIA //
     
     @PostMapping ("/nuevaExpe")
     public String agregarExperiencia(@RequestBody Experiencia expe){
