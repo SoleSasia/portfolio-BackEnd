@@ -30,7 +30,7 @@ public class HabilidadBlandaService implements IHabilidadBlandaService {
         }
         habBlanda.setId(id);
         repoHabBlanda.save(habBlanda);
-        return "El elemento experiencia fue modificado satisfactoriamente.";
+        return "El elemento habilidad blanda fue modificado satisfactoriamente.";
     }
 
     @Override

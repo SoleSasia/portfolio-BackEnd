@@ -4,6 +4,7 @@ import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.HabilidadTecnica;
+import com.solesasia.portfolio.model.Proyecto;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import com.solesasia.portfolio.service.IEducacionService;
 import com.solesasia.portfolio.service.IExperienciaService;
 import com.solesasia.portfolio.service.IHabilidadBlandaService;
 import com.solesasia.portfolio.service.IHabilidadTecnicaService;
+import com.solesasia.portfolio.service.IProyectoService;
 
 @CrossOrigin (origins = "http://localhost:4200")
 @RestController
@@ -29,8 +31,34 @@ public class Controladora {
     @Autowired private IExperienciaService serviExpe;
     @Autowired private IHabilidadTecnicaService serviHabTecnica;
     @Autowired private IHabilidadBlandaService serviHabBlanda;
+    @Autowired private IProyectoService serviProyecto;
+    
     
 
+// ABM PROYECTO // LLEVAR R A PORTFOLIODTO
+
+    @PostMapping ("/nuevoProyecto")
+    public void crearProyecto(@RequestBody Proyecto proyecto){
+        serviProyecto.crearProyecto(proyecto);
+    }
+    
+    @GetMapping ("/listaProyectos")
+    @ResponseBody
+    public List<Proyecto> listarProyectos(){
+        return serviProyecto.listarProyectos();
+    }
+    
+    @PutMapping ("editarProyecto/{id}")
+    public String editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
+        return serviProyecto.editarProyecto(id, proyecto);
+    }
+    
+    @DeleteMapping ("borrarProyecto/{id}")
+    public void borrarProyecto(@PathVariable Long id){
+        serviProyecto.borrarProyecto(id);
+    }
+    
+    
 // ABM HABILIDAD BLANDA // LLEVAR R A PORTFOLIODTO
     
     @PostMapping ("/nuevaHabBlanda")
