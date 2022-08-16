@@ -5,8 +5,9 @@ import com.solesasia.portfolio.model.Proyecto;
 import com.solesasia.portfolio.repository.ProyectoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class ProyectoService implements IProyectoService {
 
     @Autowired
