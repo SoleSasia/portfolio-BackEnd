@@ -1,5 +1,6 @@
 package com.solesasia.portfolio.controller;
 
+import com.solesasia.portfolio.dto.RespuestaDTO;
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
@@ -21,10 +22,15 @@ import com.solesasia.portfolio.service.IEducacionService;
 import com.solesasia.portfolio.service.IExperienciaService;
 import com.solesasia.portfolio.service.IHabilidadBlandaService;
 import com.solesasia.portfolio.service.IHabilidadTecnicaService;
+import com.solesasia.portfolio.service.IPortfolioService;
 import com.solesasia.portfolio.service.IProyectoService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
-@CrossOrigin (origins = "http://localhost:4200")
+
 @RestController
+@CrossOrigin (origins = "http://localhost:4200", maxAge = 3600)
 public class Controladora {
     
     @Autowired private IEducacionService serviEdu;
@@ -32,6 +38,7 @@ public class Controladora {
     @Autowired private IHabilidadTecnicaService serviHabTecnica;
     @Autowired private IHabilidadBlandaService serviHabBlanda;
     @Autowired private IProyectoService serviProyecto;
+    
     
     
 
@@ -109,27 +116,31 @@ public class Controladora {
 
 // CRUD EDUCACION //
     
-    @PostMapping ("/nuevaEdu")
-    public String agregarEducacion(@RequestBody Educacion edu){
-        serviEdu.crearEducacion(edu);
-        return "El elemento educación fue creado satisfactoriamente.";
-    }
-    
     @GetMapping ("/listaEdu")
     @ResponseBody
-    public List<Educacion> listarEducaciones(){
-        return serviEdu.listarEducaciones();
+    public ResponseEntity<List<Educacion>> listarEducaciones(){
+        List<Educacion> listaEdu = serviEdu.listarEducaciones();
+        return new ResponseEntity(listaEdu, HttpStatus.OK);
+    }
+    
+    @PostMapping ("/nuevaEdu")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void agregarEducacion(@RequestBody Educacion edu){
+        serviEdu.crearEducacion(edu);
     }
     
     @PutMapping ("/editarEdu/{id}")
-    public String editarEducacion(@PathVariable Long id, @RequestBody Educacion edu){
-        return serviEdu.editarEducacion(id, edu);
+    public ResponseEntity<RespuestaDTO> editarEducacion(@PathVariable Long id, @RequestBody Educacion edu) {
+        if (!serviEdu.editarEducacion(id, edu)) {
+            return new ResponseEntity(new RespuestaDTO("El id proporcionado no existe."), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
     }
     
     @DeleteMapping("/borrarEdu/{id}")
-    public String borrarEducacion(@PathVariable Long id){
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void borrarEducacion(@PathVariable Long id){
         serviEdu.borrarEducacion(id);
-        return "El elemento educación fue eliminado satisfactoriamente.";
     }
     
 

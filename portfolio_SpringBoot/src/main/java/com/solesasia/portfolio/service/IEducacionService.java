@@ -11,7 +11,7 @@ public interface IEducacionService {
     
     public List<Educacion> listarEducaciones();
     
-    public String editarEducacion(Long id, Educacion edu);
+    public boolean editarEducacion(Long id, Educacion edu);
     
     public void borrarEducacion(Long id);
 }

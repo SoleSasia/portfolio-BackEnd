@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.solesasia.portfolio.repository.EducacionRepository;
 
+
 //esta clase implementa la interfaz donde están declarados los métodos CRUD
 @Service
 public class EducacionService implements IEducacionService {
@@ -30,13 +31,13 @@ public class EducacionService implements IEducacionService {
 
     //Update - Actualizar
     @Override
-    public String editarEducacion(Long id, Educacion edu) {
+    public boolean editarEducacion(Long id, Educacion edu) {
         if (!repoEdu.existsById(id)) {
-            return "El id del elemento educación no existe.";
+            return false;
         }
         edu.setId(id);
         repoEdu.save(edu);
-        return "El elemento educación fue modificado satisfactoriamente.";
+        return true;
     }
 
     //Delete - Baja

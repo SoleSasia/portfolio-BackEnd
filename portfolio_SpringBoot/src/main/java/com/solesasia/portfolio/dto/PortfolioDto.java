@@ -21,4 +21,6 @@ public class PortfolioDto {
     private List<HabilidadBlanda> listaHabilidadBlanda;
     private List<Proyecto> listaProyecto;
     
+    
+    
 }
