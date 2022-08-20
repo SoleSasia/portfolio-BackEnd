@@ -19,10 +19,12 @@ public class ExperienciaService implements IExperienciaService {
         repoExpe.save(expe);
     }
 
+/*
     @Override
     public List<Experiencia> listarExperiencias() {
        return repoExpe.findAll();
     }
+*/
 
     @Override
     public String editarExperiencia(Long id, Experiencia expe) {

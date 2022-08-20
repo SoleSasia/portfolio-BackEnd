@@ -10,7 +10,7 @@ public interface IExperienciaService {
     
     public void crearExperiencia(Experiencia expe);
     
-    public List<Experiencia> listarExperiencias();
+    //public List<Experiencia> listarExperiencias();
     
     public String editarExperiencia(Long id, Experiencia expe);
     

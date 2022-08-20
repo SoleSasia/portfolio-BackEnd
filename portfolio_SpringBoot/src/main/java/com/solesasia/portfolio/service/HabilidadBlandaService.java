@@ -17,12 +17,12 @@ public class HabilidadBlandaService implements IHabilidadBlandaService {
     public void crearHabBlanda(HabilidadBlanda habBlanda) {
         repoHabBlanda.save(habBlanda);
     }
-
+/*
     @Override
     public List<HabilidadBlanda> listarHabBlandas() {
         return repoHabBlanda.findAll();
     }
-
+*/
     @Override
     public String editarHabBlanda(Long id, HabilidadBlanda habBlanda) {
         if (!repoHabBlanda.existsById(id)) {

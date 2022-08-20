@@ -23,11 +23,13 @@ public class EducacionService implements IEducacionService {
         repoEdu.save(edu);
     }
 
+    /* se muda a PortfolioService
     //Read - Lectura
     @Override
     public List<Educacion> listarEducaciones() {
         return repoEdu.findAll();
     }
+    */
 
     //Update - Actualizar
     @Override

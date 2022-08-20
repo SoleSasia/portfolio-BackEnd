@@ -17,12 +17,12 @@ public class HabilidadTecnicaService implements IHabilidadTecnicaService {
     public void crearHabTecnica(HabilidadTecnica habTecnica) {
         repoHabTecnica.save(habTecnica);
     }
-
+/*
     @Override
     public List<HabilidadTecnica> listarHabTecnicas() {
         return repoHabTecnica.findAll();
     }
-                
+*/                
                 
     @Override
     public String editarHabTecnica(Long id, HabilidadTecnica habTecnica) {

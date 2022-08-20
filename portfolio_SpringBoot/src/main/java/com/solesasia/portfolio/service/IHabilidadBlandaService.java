@@ -9,7 +9,7 @@ public interface IHabilidadBlandaService {
     
     public void crearHabBlanda(HabilidadBlanda habBlanda);
     
-    public List<HabilidadBlanda> listarHabBlandas();
+    //public List<HabilidadBlanda> listarHabBlandas();
     
     public String editarHabBlanda(Long id, HabilidadBlanda habBlanda);
     

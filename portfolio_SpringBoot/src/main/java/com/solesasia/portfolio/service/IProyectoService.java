@@ -9,7 +9,7 @@ public interface IProyectoService {
     
     public void crearProyecto(Proyecto proyecto);
     
-    public List<Proyecto> listarProyectos();
+    //public List<Proyecto> listarProyectos();
     
     public String editarProyecto(Long id, Proyecto proyecto);
     

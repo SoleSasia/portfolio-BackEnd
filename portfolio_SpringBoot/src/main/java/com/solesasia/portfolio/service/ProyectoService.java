@@ -17,12 +17,12 @@ public class ProyectoService implements IProyectoService {
     public void crearProyecto(Proyecto proyecto) {
         repoProyecto.save(proyecto);
     }
-
+/*
     @Override
     public List<Proyecto> listarProyectos() {
         return repoProyecto.findAll();
     }
-
+*/
     @Override
     public String editarProyecto(Long id, Proyecto proyecto) {
         if (!repoProyecto.existsById(id)) {

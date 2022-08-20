@@ -9,7 +9,7 @@ public interface IHabilidadTecnicaService {
     
     public void crearHabTecnica(HabilidadTecnica habTecnica);
     
-    public List<HabilidadTecnica> listarHabTecnicas();
+    //public List<HabilidadTecnica> listarHabTecnicas();
     
     public String editarHabTecnica(Long id, HabilidadTecnica habTecnica);
     

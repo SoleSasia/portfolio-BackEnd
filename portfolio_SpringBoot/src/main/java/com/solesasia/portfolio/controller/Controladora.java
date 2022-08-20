@@ -1,10 +1,12 @@
 package com.solesasia.portfolio.controller;
 
+import com.solesasia.portfolio.dto.PortfolioDTO;
 import com.solesasia.portfolio.dto.RespuestaDTO;
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.HabilidadTecnica;
+import com.solesasia.portfolio.model.Persona;
 import com.solesasia.portfolio.model.Proyecto;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,23 +40,42 @@ public class Controladora {
     @Autowired private IHabilidadTecnicaService serviHabTecnica;
     @Autowired private IHabilidadBlandaService serviHabBlanda;
     @Autowired private IProyectoService serviProyecto;
-    
+    @Autowired private IPortfolioService serviPortfolio;
     
     
 
-// ABM PROYECTO // LLEVAR R A PORTFOLIODTO
+  // PORTFOLIO
+    
+    @GetMapping ("/port/{id}")
+    @ResponseBody
+    public ResponseEntity<PortfolioDTO> getPortfolio(@PathVariable Long personaId) {
+        PortfolioDTO portfolio = serviPortfolio.getPortfolio(personaId);
+        return new ResponseEntity<> (portfolio, HttpStatus.OK);
+    }
+    
+    public boolean editarPersona(Long id, Persona perso) {
+        return serviPortfolio.editarPersona(id, perso);
+    }
+    
+/*    
+    public Persona getPersona(Long id) {
+        return serviPortfolio.getPersona(id);
+    }
+*/    
+  // ABM PROYECTO // LLEVAR R A PORTFOLIODTO
 
     @PostMapping ("/nuevoProyecto")
     public void crearProyecto(@RequestBody Proyecto proyecto){
         serviProyecto.crearProyecto(proyecto);
     }
     
+/*
     @GetMapping ("/listaProyectos")
     @ResponseBody
     public List<Proyecto> listarProyectos(){
         return serviProyecto.listarProyectos();
     }
-    
+*/    
     @PutMapping ("/editarProyecto/{id}")
     public String editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
         return serviProyecto.editarProyecto(id, proyecto);
@@ -72,13 +93,13 @@ public class Controladora {
     public void crearHabBlanda(@RequestBody HabilidadBlanda habBlanda){
         serviHabBlanda.crearHabBlanda(habBlanda);
     }
-    
+/*
     @GetMapping ("/listaHabBlandas")
     @ResponseBody
     public List<HabilidadBlanda> listarHabBlandas(){
         return serviHabBlanda.listarHabBlandas();
     }
-    
+*/    
     @PutMapping ("/editarHabBlanda/{id}")
     public String editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
         return serviHabBlanda.editarHabBlanda(id, habBlanda);
@@ -96,13 +117,13 @@ public class Controladora {
     public void crearHabTecnica(@RequestBody HabilidadTecnica habTecnica){
         serviHabTecnica.crearHabTecnica(habTecnica);
     }
-    
+/*    
     @GetMapping ("/listaHabTecnicas")
     @ResponseBody
     public List<HabilidadTecnica> listarHabTecnicas(){
         return serviHabTecnica.listarHabTecnicas();
     }
-    
+*/    
     @PutMapping ("/editarHabTecnica/{id}")
     public String editarHabTecnica(@PathVariable Long id, @RequestBody HabilidadTecnica habTecnica) {
         return serviHabTecnica.editarHabTecnica(id, habTecnica);
@@ -115,14 +136,15 @@ public class Controladora {
 
 
 // CRUD EDUCACION //
-    
+
+/*    
     @GetMapping ("/listaEdu")
     @ResponseBody
     public ResponseEntity<List<Educacion>> listarEducaciones(){
         List<Educacion> listaEdu = serviEdu.listarEducaciones();
         return new ResponseEntity(listaEdu, HttpStatus.OK);
     }
-    
+*/    
     @PostMapping ("/nuevaEdu")
     @ResponseStatus(HttpStatus.CREATED)
     public void agregarEducacion(@RequestBody Educacion edu){
@@ -151,13 +173,13 @@ public class Controladora {
         serviExpe.crearExperiencia(expe);
         return "El elemento experiencia fue creado satisfactoriamente.";
     }
-    
+/*    
     @GetMapping ("/listaExpe")
     @ResponseBody
     public List<Experiencia> listarExperiencias(){
         return serviExpe.listarExperiencias();
     }
-    
+*/    
     @PutMapping ("/editarExpe/{id}")
     public String editarExperiencia(@PathVariable Long id, @RequestBody Experiencia expe){
         return serviExpe.editarExperiencia(id, expe);
