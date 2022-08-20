@@ -1,3 +1,4 @@
+
 package com.solesasia.portfolio.model;
 
 import java.io.Serializable;
@@ -10,18 +11,21 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class NivelHabilidad implements Serializable {
+public class Usuario implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String nombreNivel;
+    private String username;
+    private String password;
 
-    public NivelHabilidad() {
+    public Usuario() {
     }
 
-    public NivelHabilidad(Long id, String nombreNivel) {
+    public Usuario(Long id, String username, String password) {
         this.id = id;
-        this.nombreNivel = nombreNivel;
+        this.username = username;
+        this.password = password;
     }
-
+    
+    
 }

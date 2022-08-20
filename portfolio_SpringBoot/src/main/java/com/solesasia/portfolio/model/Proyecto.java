@@ -14,8 +14,8 @@ public class Proyecto implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String nombreProyecto;
-    private String descripcionProyecto;
+    private String nombreProye;
+    private String descripcionProye;
     private String imgUrl;
     private String repoUrl;
     private String liveUrl;
@@ -24,10 +24,10 @@ public class Proyecto implements Serializable {
     public Proyecto() {
     }
 
-    public Proyecto(Long id, String nombreProyecto, String descripcionProyecto, String imgUrl, String repoUrl, String liveUrl, Long personaId) {
+    public Proyecto(Long id, String nombreProye, String descripcionProye, String imgUrl, String repoUrl, String liveUrl, Long personaId) {
         this.id = id;
-        this.nombreProyecto = nombreProyecto;
-        this.descripcionProyecto = descripcionProyecto;
+        this.nombreProye = nombreProye;
+        this.descripcionProye = descripcionProye;
         this.imgUrl = imgUrl;
         this.repoUrl = repoUrl;
         this.liveUrl = liveUrl;

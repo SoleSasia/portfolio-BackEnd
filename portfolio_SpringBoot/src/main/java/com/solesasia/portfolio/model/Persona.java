@@ -40,4 +40,6 @@ public class Persona {
         this.usuarioId = usuarioId;
     }
 
+    
+
 }
