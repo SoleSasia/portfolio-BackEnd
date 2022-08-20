@@ -55,12 +55,12 @@ public class Controladora {
         return serviProyecto.listarProyectos();
     }
     
-    @PutMapping ("editarProyecto/{id}")
+    @PutMapping ("/editarProyecto/{id}")
     public String editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
         return serviProyecto.editarProyecto(id, proyecto);
     }
     
-    @DeleteMapping ("borrarProyecto/{id}")
+    @DeleteMapping ("/borrarProyecto/{id}")
     public void borrarProyecto(@PathVariable Long id){
         serviProyecto.borrarProyecto(id);
     }
@@ -73,7 +73,7 @@ public class Controladora {
         serviHabBlanda.crearHabBlanda(habBlanda);
     }
     
-    @GetMapping ("ListaHabBlandas")
+    @GetMapping ("/listaHabBlandas")
     @ResponseBody
     public List<HabilidadBlanda> listarHabBlandas(){
         return serviHabBlanda.listarHabBlandas();
