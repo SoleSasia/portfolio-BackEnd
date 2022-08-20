@@ -14,22 +14,22 @@ import lombok.Data;
 public class PortfolioDTO {
     
     private Persona persona;
-    private List<Educacion> listaEducacion;
-    private List<Experiencia> listaExperiencia;
-    private List<HabilidadTecnica> listaHabilidadTecnica;
-    private List<HabilidadBlanda> listaHabilidadBlanda;
-    private List<Proyecto> listaProyecto;
+    private List<Educacion> educaciones;
+    private List<Experiencia> experiencias;
+    private List<HabilidadTecnica> habilidadesTecnicas;
+    private List<HabilidadBlanda> habilidadesBlandas;
+    private List<Proyecto> proyectos;
 
     public PortfolioDTO() {
     }
 
-    public PortfolioDTO(Persona persona, List<Educacion> listaEducacion, List<Experiencia> listaExperiencia, List<HabilidadTecnica> listaHabilidadTecnica, List<HabilidadBlanda> listaHabilidadBlanda, List<Proyecto> listaProyecto) {
+    public PortfolioDTO(Persona persona, List<Educacion> educaciones, List<Experiencia> experiencias, List<HabilidadTecnica> habilidadesTecnicas, List<HabilidadBlanda> habilidadesBlandas, List<Proyecto> proyectos) {
         this.persona = persona;
-        this.listaEducacion = listaEducacion;
-        this.listaExperiencia = listaExperiencia;
-        this.listaHabilidadTecnica = listaHabilidadTecnica;
-        this.listaHabilidadBlanda = listaHabilidadBlanda;
-        this.listaProyecto = listaProyecto;
+        this.educaciones = educaciones;
+        this.experiencias = experiencias;
+        this.habilidadesTecnicas = habilidadesTecnicas;
+        this.habilidadesBlandas = habilidadesBlandas;
+        this.proyectos = proyectos;
     }
     
 }

@@ -9,12 +9,12 @@ import java.util.Optional;
 public interface IPortfolioService {
     
     //Lectura persona
-    public Persona getPersona(Long id);
+    public Persona getPersona();
     
     //Modificar persona
-    public boolean editarPersona(Long id, Persona perso);
+    public boolean editarPersona(Persona perso);
    
     //Lectura porfolio
-    public PortfolioDTO getPortfolio(Long personaId);
+    public PortfolioDTO getPortfolio();
     
 }

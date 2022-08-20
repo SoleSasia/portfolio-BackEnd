@@ -33,15 +33,14 @@ public class PortfolioService implements IPortfolioService {
     
     
     @Override
-    public Persona getPersona(Long id) {
-        return repoPersona.findById(id).orElse(null);
+    public Persona getPersona() {
+        long personaId = 1; //"Harcodeo" id de la única persona disponible
+        return repoPersona.findById(personaId).orElse(null);
     }
 
     @Override
-    public boolean editarPersona(Long id, Persona perso) {
-        if (!repoPersona.existsById(id)) {
-            return false;
-        }
+    public boolean editarPersona(Persona perso) {
+        long id = 1; //"Harcodeo" id de la única persona disponible
         perso.setId(id);
         repoPersona.save(perso);
         return true;
@@ -49,30 +48,30 @@ public class PortfolioService implements IPortfolioService {
 
     
     @Override
-    public PortfolioDTO getPortfolio(Long personaId) {
+    public PortfolioDTO getPortfolio() {
 
         // recupera los datos desde la persistencia
-        Persona persona = this.getPersona(personaId);
+        Persona persona = this.getPersona();
 
-        List<Educacion> listaEducacion = repoEducacion.findAll();
+        List<Educacion> educaciones = repoEducacion.findAll();
 
-        List<Experiencia> listaExperiencia = repoExperiencia.findAll();
+        List<Experiencia> experiencias = repoExperiencia.findAll();
 
-        List<HabilidadTecnica> listaHabilidadTecnica = repoHabTecnica.findAll();
+        List<HabilidadTecnica> habilidadesTecnicas = repoHabTecnica.findAll();
 
-        List<HabilidadBlanda> listaHabilidadBlanda = repoHabBlanda.findAll();
+        List<HabilidadBlanda> habilidadesBlandas = repoHabBlanda.findAll();
 
-        List<Proyecto> listaProyecto = repoProyecto.findAll();
+        List<Proyecto> proyectos = repoProyecto.findAll();
 
         // asigna los datos recuperados al portfolio
         PortfolioDTO portfolio = new PortfolioDTO();
         
         portfolio.setPersona(persona);
-        portfolio.setListaEducacion(listaEducacion);
-        portfolio.setListaExperiencia(listaExperiencia);
-        portfolio.setListaHabilidadBlanda(listaHabilidadBlanda);
-        portfolio.setListaHabilidadTecnica(listaHabilidadTecnica);
-        portfolio.setListaProyecto(listaProyecto);
+        portfolio.setEducaciones(educaciones);
+        portfolio.setExperiencias(experiencias);
+        portfolio.setHabilidadesTecnicas(habilidadesTecnicas);
+        portfolio.setHabilidadesBlandas(habilidadesBlandas);
+        portfolio.setProyectos(proyectos);
 
         // entrega portfolio
         return portfolio;
