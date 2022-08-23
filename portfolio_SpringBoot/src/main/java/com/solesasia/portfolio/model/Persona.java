@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,12 +25,15 @@ public class Persona {
     private String githubUrl;
     private String descripcion;
     private String imgUrl;
-    private Long usuarioId;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name="usuario_id")
+    private Usuario usuario;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, Long usuarioId) {
+    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.ocupacion = ocupacion;
@@ -37,7 +43,7 @@ public class Persona {
         this.githubUrl = githubUrl;
         this.descripcion = descripcion;
         this.imgUrl = imgUrl;
-        this.usuarioId = usuarioId;
+        this.usuario = usuario;
     }
 
     
