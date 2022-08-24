@@ -9,8 +9,6 @@ public interface IEducacionService {
 //declaro los métodos (CRUD) sin implementar, eso será función de ServiceEducacion
     public void crearEducacion(Educacion edu);
     
-    //public List<Educacion> listarEducaciones();
-    
     public boolean editarEducacion(Long id, Educacion edu);
     
     public void borrarEducacion(Long id);

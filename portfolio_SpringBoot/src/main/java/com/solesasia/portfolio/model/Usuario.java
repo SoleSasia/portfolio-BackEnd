@@ -18,16 +18,16 @@ public class Usuario implements Serializable {
     private Long id;
     private String username;
     private String password;
-    @OneToOne(mappedBy="usuario")
-    private Persona persona;
+    //@OneToOne(mappedBy="usuario")
+   // private Persona persona;
 
     public Usuario() {
     }
 
-    public Usuario(String username, String password, Persona persona) {
+    public Usuario(String username, String password) {
         this.username = username;
         this.password = password;
-        this.persona = persona;
+       
     }
 
     

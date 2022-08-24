@@ -9,10 +9,8 @@ import java.util.List;
 public interface IExperienciaService {
     
     public void crearExperiencia(Experiencia expe);
-    
-    //public List<Experiencia> listarExperiencias();
-    
-    public String editarExperiencia(Long id, Experiencia expe);
+       
+    public boolean editarExperiencia(Long id, Experiencia expe);
     
     public void borrarExperiencia(Long id);
 }

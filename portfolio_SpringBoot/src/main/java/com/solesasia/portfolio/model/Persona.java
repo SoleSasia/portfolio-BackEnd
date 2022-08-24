@@ -25,9 +25,9 @@ public class Persona {
     private String githubUrl;
     private String descripcion;
     private String imgUrl;
-    @OneToOne
-    @MapsId
-    @JoinColumn(name="usuario_id")
+    //@OneToOne
+    //@MapsId
+    //@JoinColumn(name="usuario_id")
     private Usuario usuario;
 
     public Persona() {

@@ -8,7 +8,6 @@ import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.HabilidadTecnica;
 import com.solesasia.portfolio.model.Persona;
 import com.solesasia.portfolio.model.Proyecto;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,7 +43,7 @@ public class Controladora {
     @Autowired private IPortfolioService serviPortfolio;
         
 
-  // PORTFOLIO
+  // PORTFOLIO ML
     
     @GetMapping ("/portfolio")
     @ResponseBody
@@ -77,17 +76,13 @@ public class Controladora {
     }
     
     @PutMapping ("/editarProyecto/{id}")
-    public String editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
-        return serviProyecto.editarProyecto(id, proyecto);
+    public ResponseEntity<RespuestaDTO> editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
+        if (!serviProyecto.editarProyecto(id, proyecto)){
+            return new ResponseEntity(new RespuestaDTO("El id proporcionado no existe."), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
     }
     
-/*
-    @GetMapping ("/listaProyectos")
-    @ResponseBody
-    public List<Proyecto> listarProyectos(){
-        return serviProyecto.listarProyectos();
-    }
-*/    
     
   // HABILIDAD BLANDA ABM
     
@@ -102,16 +97,13 @@ public class Controladora {
     }
     
     @PutMapping ("/editarHabBlanda/{id}")
-    public String editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
-        return serviHabBlanda.editarHabBlanda(id, habBlanda);
+    public ResponseEntity<RespuestaDTO> editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
+        if (!serviHabBlanda.editarHabBlanda(id, habBlanda)) {
+            return new ResponseEntity(new RespuestaDTO("El id proporcionado no existe."), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
     }
-/*
-    @GetMapping ("/listaHabBlandas")
-    @ResponseBody
-    public List<HabilidadBlanda> listarHabBlandas(){
-        return serviHabBlanda.listarHabBlandas();
-    }
-*/    
+   
     
   // HABILIDAD TECNICA ABM
     
@@ -126,18 +118,38 @@ public class Controladora {
     }   
     
     @PutMapping ("/editarHabTecnica/{id}")
-    public String editarHabTecnica(@PathVariable Long id, @RequestBody HabilidadTecnica habTecnica) {
-        return serviHabTecnica.editarHabTecnica(id, habTecnica);
+    public ResponseEntity<RespuestaDTO> editarHabTecnica(@PathVariable Long id, @RequestBody HabilidadTecnica habTecnica) {
+        if (!serviHabTecnica.editarHabTecnica(id, habTecnica)) {
+            return new ResponseEntity(new RespuestaDTO("El id proporcionado no existe."), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
+   
     }
-/*    
-    @GetMapping ("/listaHabTecnicas")
-    @ResponseBody
-    public List<HabilidadTecnica> listarHabTecnicas(){
-        return serviHabTecnica.listarHabTecnicas();
-    }
-*/    
+  
     
-  // EDUCACION ABM (CON RESPONSEENTITY)
+  // EXPERIENCIA ABM
+    
+    @PostMapping ("/nuevaExpe")
+    public String agregarExperiencia(@RequestBody Experiencia expe){
+        serviExpe.crearExperiencia(expe);
+        return "El elemento experiencia fue creado satisfactoriamente.";
+    }
+    
+    @DeleteMapping("/borrarExpe/{id}")
+    public String borrarExperiencia(@PathVariable Long id){
+        serviExpe.borrarExperiencia(id);
+        return "El elemento experiencia fue eliminado satisfactoriamente.";
+    }
+    
+    @PutMapping ("/editarExpe/{id}")
+    public ResponseEntity<RespuestaDTO> editarExperiencia(@PathVariable Long id, @RequestBody Experiencia expe) {
+        if (!serviExpe.editarExperiencia(id, expe)) {
+            return new ResponseEntity(new RespuestaDTO("El id proporcionado no existe."), HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
+    }
+    
+     // EDUCACION ABM (CON RESPONSEENTITY)
   
     @PostMapping ("/nuevaEdu")
     @ResponseStatus(HttpStatus.CREATED)
@@ -158,39 +170,5 @@ public class Controladora {
         }
         return new ResponseEntity(new RespuestaDTO("El elemento ha sido actualizado."), HttpStatus.OK);
     }
-    
-/*    
-    @GetMapping ("/listaEdu")
-    @ResponseBody
-    public ResponseEntity<List<Educacion>> listarEducaciones(){
-        List<Educacion> listaEdu = serviEdu.listarEducaciones();
-        return new ResponseEntity(listaEdu, HttpStatus.OK);
-    }
-*/  
-    
-  // EXPERIENCIA ABM
-    
-    @PostMapping ("/nuevaExpe")
-    public String agregarExperiencia(@RequestBody Experiencia expe){
-        serviExpe.crearExperiencia(expe);
-        return "El elemento experiencia fue creado satisfactoriamente.";
-    }
-    
-    @DeleteMapping("/borrarExpe/{id}")
-    public String borrarExperiencia(@PathVariable Long id){
-        serviExpe.borrarExperiencia(id);
-        return "El elemento experiencia fue eliminado satisfactoriamente.";
-    }
-    
-    @PutMapping ("/editarExpe/{id}")
-    public String editarExperiencia(@PathVariable Long id, @RequestBody Experiencia expe){
-        return serviExpe.editarExperiencia(id, expe);
-    }
-/*    
-    @GetMapping ("/listaExpe")
-    @ResponseBody
-    public List<Experiencia> listarExperiencias(){
-        return serviExpe.listarExperiencias();
-    }
-*/        
+      
 }

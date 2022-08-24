@@ -15,7 +15,6 @@ import com.solesasia.portfolio.repository.HabilidadTecnicaRepository;
 import com.solesasia.portfolio.repository.PersonaRepository;
 import com.solesasia.portfolio.repository.ProyectoRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

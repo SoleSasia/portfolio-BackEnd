@@ -23,23 +23,16 @@ public class EducacionService implements IEducacionService {
         repoEdu.save(edu);
     }
 
-    /* se muda a PortfolioService
-    //Read - Lectura
-    @Override
-    public List<Educacion> listarEducaciones() {
-        return repoEdu.findAll();
-    }
-    */
-
     //Update - Actualizar
     @Override
     public boolean editarEducacion(Long id, Educacion edu) {
         if (!repoEdu.existsById(id)) {
             return false;
+        } else {
+            edu.setId(id);
+            repoEdu.save(edu);
+            return true;
         }
-        edu.setId(id);
-        repoEdu.save(edu);
-        return true;
     }
 
     //Delete - Baja

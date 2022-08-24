@@ -27,13 +27,14 @@ public class ExperienciaService implements IExperienciaService {
 */
 
     @Override
-    public String editarExperiencia(Long id, Experiencia expe) {
+    public boolean editarExperiencia(Long id, Experiencia expe) {
         if (!repoExpe.existsById(id)) {
-            return "El id del elemento experiencia no existe.";
+            return false;
+        } else {
+            expe.setId(id);
+            repoExpe.save(expe);
+            return true;
         }
-        expe.setId(id);
-        repoExpe.save(expe);
-        return "El elemento experiencia fue modificado satisfactoriamente.";
     }
 
     @Override

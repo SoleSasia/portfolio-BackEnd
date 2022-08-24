@@ -3,7 +3,6 @@ package com.solesasia.portfolio.service;
 
 import com.solesasia.portfolio.model.Proyecto;
 import com.solesasia.portfolio.repository.ProyectoRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,20 +16,15 @@ public class ProyectoService implements IProyectoService {
     public void crearProyecto(Proyecto proyecto) {
         repoProyecto.save(proyecto);
     }
-/*
+
     @Override
-    public List<Proyecto> listarProyectos() {
-        return repoProyecto.findAll();
-    }
-*/
-    @Override
-    public String editarProyecto(Long id, Proyecto proyecto) {
+    public boolean editarProyecto(Long id, Proyecto proyecto) {
         if (!repoProyecto.existsById(id)) {
-            return "El id del elemento proyecto no existe.";
+            return false;
         } else {
             proyecto.setId(id);
             repoProyecto.save(proyecto);
-            return "El elemento proyecto fue modificado satisfactoriamente.";
+            return true;
         }
     }
 
