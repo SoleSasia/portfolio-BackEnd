@@ -5,16 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Setter @Getter
-public class RespuestaDTO {
+public class RespuestaDto {
     
-    private String respuesta = "";
-    
+    private boolean salioBien = true;
+    private String msj = "";
+       
 
-    public RespuestaDTO() {
+    public RespuestaDto() {
     }
 
-    public RespuestaDTO(String resp) {
-        this.respuesta = resp;
+    public RespuestaDto(boolean salioBien, String msj) {
+        this.salioBien = salioBien;
+        this.msj = msj;
     }
     
     

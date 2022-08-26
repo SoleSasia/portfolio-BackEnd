@@ -11,7 +11,7 @@ import lombok.Data;
 
 
 @Data
-public class PortfolioDTO {
+public class PortfolioDto {
     
     private Persona persona;
     private List<Educacion> educaciones;
@@ -20,10 +20,10 @@ public class PortfolioDTO {
     private List<HabilidadBlanda> habilidadesBlandas;
     private List<Proyecto> proyectos;
 
-    public PortfolioDTO() {
+    public PortfolioDto() {
     }
 
-    public PortfolioDTO(Persona persona, List<Educacion> educaciones, List<Experiencia> experiencias, List<HabilidadTecnica> habilidadesTecnicas, List<HabilidadBlanda> habilidadesBlandas, List<Proyecto> proyectos) {
+    public PortfolioDto(Persona persona, List<Educacion> educaciones, List<Experiencia> experiencias, List<HabilidadTecnica> habilidadesTecnicas, List<HabilidadBlanda> habilidadesBlandas, List<Proyecto> proyectos) {
         this.persona = persona;
         this.educaciones = educaciones;
         this.experiencias = experiencias;

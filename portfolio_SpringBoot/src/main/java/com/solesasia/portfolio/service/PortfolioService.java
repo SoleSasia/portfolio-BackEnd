@@ -1,7 +1,7 @@
 
 package com.solesasia.portfolio.service;
 
-import com.solesasia.portfolio.dto.PortfolioDTO;
+import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
@@ -47,7 +47,7 @@ public class PortfolioService implements IPortfolioService {
 
     
     @Override
-    public PortfolioDTO getPortfolio() {
+    public PortfolioDto getPortfolio() {
 
         // recupera los datos desde la persistencia
         Persona persona = this.getPersona();
@@ -63,7 +63,7 @@ public class PortfolioService implements IPortfolioService {
         List<Proyecto> proyectos = repoProyecto.findAll();
 
         // asigna los datos recuperados al portfolio
-        PortfolioDTO portfolio = new PortfolioDTO();
+        PortfolioDto portfolio = new PortfolioDto();
         
         portfolio.setPersona(persona);
         portfolio.setEducaciones(educaciones);

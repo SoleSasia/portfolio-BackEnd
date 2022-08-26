@@ -25,16 +25,19 @@ public class Persona {
     private String githubUrl;
     private String descripcion;
     private String imgUrl;
+    
+    private String username;
+    private String password;
+    
     //@OneToOne
     //@MapsId
     //@JoinColumn(name="usuario_id")
-    private Usuario usuario;
+    //private Usuario usuario;
 
     public Persona() {
     }
 
-    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, Usuario usuario) {
-        this.id = id;
+    public Persona(String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, String username, String password) {
         this.nombre = nombre;
         this.ocupacion = ocupacion;
         this.bannerUrl = bannerUrl;
@@ -43,8 +46,11 @@ public class Persona {
         this.githubUrl = githubUrl;
         this.descripcion = descripcion;
         this.imgUrl = imgUrl;
-        this.usuario = usuario;
+        this.username = username;
+        this.password = password;
     }
+
+    
 
     
 
