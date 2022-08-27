@@ -1,11 +1,15 @@
 
 package com.solesasia.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,19 +24,22 @@ public class Experiencia implements Serializable {
     private String organismoExpe;
     private String descripcionExpe;
     private String urlLogoExpe;
-    private Long personaId;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
+    //private Long personaId;
 
     public Experiencia() {
     }
 
-    public Experiencia(Long id, String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe, Long personaId) {
-        this.id = id;
+    public Experiencia(String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe) {
         this.puestoExpe = puestoExpe;
         this.periodoExpe = periodoExpe;
         this.organismoExpe = organismoExpe;
         this.descripcionExpe = descripcionExpe;
         this.urlLogoExpe = urlLogoExpe;
-        this.personaId = personaId;
+        
     }
 
 }

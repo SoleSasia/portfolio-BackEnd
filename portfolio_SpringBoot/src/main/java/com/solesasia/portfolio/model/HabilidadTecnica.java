@@ -1,10 +1,14 @@
 package com.solesasia.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,18 +20,28 @@ public class HabilidadTecnica implements Serializable {
     private Long id;
     private String nombreHabilidad;
     private String urlIcono;
-    private Long personaId;
-    private Long nivelId;
+    
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
+    
+    //private Long personaId;
+    
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nivel_id")
+    private NivelHabilidad nivel;
+    
 
     public HabilidadTecnica() {
     }
 
-    public HabilidadTecnica(Long id, String nombreHabilidad, String urlIcono, Long personaId, Long nivelId) {
-        this.id = id;
+    public HabilidadTecnica(String nombreHabilidad, String urlIcono, NivelHabilidad nivel) {
         this.nombreHabilidad = nombreHabilidad;
         this.urlIcono = urlIcono;
-        this.personaId = personaId;
-        this.nivelId = nivelId;
     }
+
     
+
 }

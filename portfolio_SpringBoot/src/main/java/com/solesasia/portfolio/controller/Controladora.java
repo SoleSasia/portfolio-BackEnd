@@ -57,11 +57,13 @@ public class Controladora {
         return serviPortfolio.editarPersona(perso);
     }
     
-    /*    
-        public Persona getPersona(Long id) {
-            return serviPortfolio.getPersona(id);
-        }
-    */
+    @GetMapping ("/persona")
+    @ResponseBody
+    public ResponseEntity<Persona> getPersona() {
+        Persona perso = serviPortfolio.getPersona();
+        return new ResponseEntity<>(perso, HttpStatus.OK);
+    }
+    
     
   // PROYECTO ABM 
     

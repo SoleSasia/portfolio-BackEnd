@@ -1,10 +1,15 @@
 package com.solesasia.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,6 +20,11 @@ public class NivelHabilidad implements Serializable {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String nombreNivel;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "id")
+    private List<HabilidadTecnica> habTecnicas;
+ 
 
     public NivelHabilidad() {
     }
@@ -23,5 +33,7 @@ public class NivelHabilidad implements Serializable {
         this.id = id;
         this.nombreNivel = nombreNivel;
     }
+
+    
 
 }

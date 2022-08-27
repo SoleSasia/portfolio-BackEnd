@@ -3,9 +3,6 @@ package com.solesasia.portfolio.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -26,19 +23,29 @@ public class Persona {
     private String githubUrl;
     private String descripcion;
     private String imgUrl;
-   
-    //mapear para que sea unico??
-    private String username;
-    private String password;
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "personaId")
+    
+    //@JsonIgnore
+    @OneToMany(mappedBy = "persona")
     private List<Educacion> educaciones;
+    @JsonIgnore
+    @OneToMany(mappedBy = "id")
+    private List<Experiencia> experiencias;
+    @JsonIgnore
+    @OneToMany(mappedBy = "id")
+    private List<HabilidadTecnica> habTecnicas;
+    @JsonIgnore
+    @OneToMany(mappedBy = "id")
+    private List<HabilidadBlanda> habBlandas;
+    @JsonIgnore
+    @OneToMany(mappedBy = "id")
+    private List<Proyecto> proyectos;
+    
     
 
     public Persona() {
     }
 
-    public Persona(String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, String username, String password, List<Educacion> educaciones) {
+    public Persona(String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, List<Educacion> educaciones) {
         this.nombre = nombre;
         this.ocupacion = ocupacion;
         this.bannerUrl = bannerUrl;
@@ -47,16 +54,8 @@ public class Persona {
         this.githubUrl = githubUrl;
         this.descripcion = descripcion;
         this.imgUrl = imgUrl;
-        this.username = username;
-        this.password = password;
         this.educaciones = educaciones;
     }
-
-    
-
-    
-
-    
 
     
 

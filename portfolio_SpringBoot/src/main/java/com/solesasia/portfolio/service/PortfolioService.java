@@ -34,7 +34,8 @@ public class PortfolioService implements IPortfolioService {
     @Override
     public Persona getPersona() {
         long personaId = 1; //"Harcodeo" id de la única persona disponible
-        return repoPersona.findById(personaId).orElse(null);
+        Persona perso = repoPersona.findById(personaId).orElse(null);
+        return perso;
     }
 
     @Override
@@ -75,7 +76,6 @@ public class PortfolioService implements IPortfolioService {
         // entrega portfolio
         return portfolio;
     }
-    
     
     
 }

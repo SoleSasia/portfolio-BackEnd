@@ -1,6 +1,7 @@
 
 package com.solesasia.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -23,18 +24,26 @@ public class Educacion implements Serializable {
     private String institucionEdu;
     private String descripcionEdu;
     private String urlLogoEdu;
-    private Long personaId;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
+    
+    
+   
 
     public Educacion() {
     }
 
-    public Educacion(String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long personaId) {
+    public Educacion(String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Persona persona, Long idPerso) {
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
         this.institucionEdu = institucionEdu;
         this.descripcionEdu = descripcionEdu;
         this.urlLogoEdu = urlLogoEdu;
-        this.personaId = personaId;
+        this.persona = persona;
     }
+
+    
 
 }
