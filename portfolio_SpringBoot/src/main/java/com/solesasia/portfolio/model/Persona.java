@@ -1,5 +1,6 @@
 package com.solesasia.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,7 +17,6 @@ import lombok.Setter;
 public class Persona {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String ocupacion;
@@ -30,7 +30,7 @@ public class Persona {
     //mapear para que sea unico??
     private String username;
     private String password;
-    
+    @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "personaId")
     private List<Educacion> educaciones;
     
