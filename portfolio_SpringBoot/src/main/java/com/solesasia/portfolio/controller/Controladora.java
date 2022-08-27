@@ -1,5 +1,6 @@
 package com.solesasia.portfolio.controller;
 
+import com.solesasia.portfolio.dto.EduDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.dto.RespuestaDto;
 import com.solesasia.portfolio.model.Educacion;
@@ -163,7 +164,7 @@ public class Controladora {
      // EDUCACION ABM
   
     @PostMapping ("/nuevaEdu")
-    public ResponseEntity<RespuestaDto> agregarEducacion(@RequestBody Educacion edu){
+    public ResponseEntity<RespuestaDto> agregarEducacion(@RequestBody EduDto edu){
         serviEdu.crearEducacion(edu);
         RespuestaDto resp = new RespuestaDto(true, "¡La educación ha sido agregada correctamente!");
         return new ResponseEntity(resp, HttpStatus.CREATED);
@@ -176,7 +177,7 @@ public class Controladora {
     }
     
     @PutMapping ("/editarEdu/{id}")
-    public ResponseEntity<RespuestaDto> editarEducacion(@PathVariable Long id, @RequestBody Educacion edu) {
+    public ResponseEntity<RespuestaDto> editarEducacion(@PathVariable Long id, @RequestBody EduDto edu) {
         if (!serviEdu.editarEducacion(id, edu)) {
             RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);

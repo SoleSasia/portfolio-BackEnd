@@ -19,15 +19,16 @@ public class Educacion implements Serializable {
 
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
     private String tituloEdu;
     private String periodoEdu;
     private String institucionEdu;
     private String descripcionEdu;
     private String urlLogoEdu;
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;
+    
     
     
    
@@ -35,13 +36,13 @@ public class Educacion implements Serializable {
     public Educacion() {
     }
 
-    public Educacion(String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Persona persona, Long idPerso) {
+    public Educacion(Persona persona, String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu) {
+        this.persona = persona;
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
         this.institucionEdu = institucionEdu;
         this.descripcionEdu = descripcionEdu;
         this.urlLogoEdu = urlLogoEdu;
-        this.persona = persona;
     }
 
     
