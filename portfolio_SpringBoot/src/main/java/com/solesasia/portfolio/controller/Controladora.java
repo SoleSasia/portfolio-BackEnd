@@ -136,15 +136,16 @@ public class Controladora {
   // EXPERIENCIA ABM
     
     @PostMapping ("/nuevaExpe")
-    public String agregarExperiencia(@RequestBody Experiencia expe){
+    public ResponseEntity<RespuestaDto> agregarExperiencia(@RequestBody Experiencia expe){
         serviExpe.crearExperiencia(expe);
-        return "El elemento experiencia fue creado satisfactoriamente.";
+        RespuestaDto resp = new RespuestaDto(true, "¡La experiencia ha sido agregada correctamente!");
+        return new ResponseEntity(resp, HttpStatus.CREATED);
     }
     
     @DeleteMapping("/borrarExpe/{id}")
-    public String borrarExperiencia(@PathVariable Long id){
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void borrarExperiencia(@PathVariable Long id){
         serviExpe.borrarExperiencia(id);
-        return "El elemento experiencia fue eliminado satisfactoriamente.";
     }
     
     @PutMapping ("/editarExpe/{id}")
@@ -157,10 +158,9 @@ public class Controladora {
         return new ResponseEntity(resp, HttpStatus.OK);
     }
     
-     // EDUCACION ABM (CON RESPONSEENTITY)
+     // EDUCACION ABM
   
     @PostMapping ("/nuevaEdu")
-    //@ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<RespuestaDto> agregarEducacion(@RequestBody Educacion edu){
         serviEdu.crearEducacion(edu);
         RespuestaDto resp = new RespuestaDto(true, "¡La educación ha sido agregada correctamente!");

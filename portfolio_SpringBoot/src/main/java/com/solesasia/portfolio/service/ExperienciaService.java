@@ -19,13 +19,6 @@ public class ExperienciaService implements IExperienciaService {
         repoExpe.save(expe);
     }
 
-/*
-    @Override
-    public List<Experiencia> listarExperiencias() {
-       return repoExpe.findAll();
-    }
-*/
-
     @Override
     public boolean editarExperiencia(Long id, Experiencia expe) {
         if (!repoExpe.existsById(id)) {
