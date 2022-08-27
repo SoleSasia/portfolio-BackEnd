@@ -3,9 +3,12 @@ package com.solesasia.portfolio.model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,8 +28,7 @@ public class Educacion implements Serializable {
     public Educacion() {
     }
 
-    public Educacion(Long id, String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long personaId) {
-        this.id = id;
+    public Educacion(String tituloEdu, String periodoEdu, String institucionEdu, String descripcionEdu, String urlLogoEdu, Long personaId) {
         this.tituloEdu = tituloEdu;
         this.periodoEdu = periodoEdu;
         this.institucionEdu = institucionEdu;
@@ -34,5 +36,5 @@ public class Educacion implements Serializable {
         this.urlLogoEdu = urlLogoEdu;
         this.personaId = personaId;
     }
-    
+
 }
