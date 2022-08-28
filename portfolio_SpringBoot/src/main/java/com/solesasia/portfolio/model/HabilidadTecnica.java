@@ -17,31 +17,26 @@ import lombok.Setter;
 public class HabilidadTecnica implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
-    private String nombreHabilidad;
-    private String urlIcono;
-    
+    private Long id; 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
-    private Persona persona;
-    
-    //private Long personaId;
-    
+    private Persona persona;   
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "nivel_id")
     private NivelHabilidad nivel;
-    
+    private String nombreHabilidad;
+    private String urlIcono;
 
     public HabilidadTecnica() {
     }
 
-    public HabilidadTecnica(String nombreHabilidad, String urlIcono, NivelHabilidad nivel) {
+    public HabilidadTecnica(Persona persona, NivelHabilidad nivel, String nombreHabilidad, String urlIcono) {
+        this.persona = persona;
+        this.nivel = nivel;
         this.nombreHabilidad = nombreHabilidad;
         this.urlIcono = urlIcono;
     }
-
-    
 
 }

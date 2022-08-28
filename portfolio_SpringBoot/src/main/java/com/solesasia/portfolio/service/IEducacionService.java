@@ -1,8 +1,6 @@
 package com.solesasia.portfolio.service;
 
-
 import com.solesasia.portfolio.dto.EduDto;
-import com.solesasia.portfolio.model.Educacion;
 
 public interface IEducacionService {
 
