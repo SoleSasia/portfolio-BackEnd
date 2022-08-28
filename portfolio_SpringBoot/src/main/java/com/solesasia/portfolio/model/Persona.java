@@ -27,17 +27,17 @@ public class Persona {
     //@JsonIgnore
     @OneToMany(mappedBy = "persona")
     private List<Educacion> educaciones;
-    @JsonIgnore
-    @OneToMany(mappedBy = "id")
+    //@JsonIgnore
+    @OneToMany(mappedBy = "persona")
     private List<Experiencia> experiencias;
-    @JsonIgnore
-    @OneToMany(mappedBy = "id")
+    //@JsonIgnore
+    @OneToMany(mappedBy = "persona")
     private List<HabilidadTecnica> habTecnicas;
-    @JsonIgnore
-    @OneToMany(mappedBy = "id")
+    //@JsonIgnore
+    @OneToMany(mappedBy = "persona")
     private List<HabilidadBlanda> habBlandas;
-    @JsonIgnore
-    @OneToMany(mappedBy = "id")
+    //@JsonIgnore
+    @OneToMany(mappedBy = "persona")
     private List<Proyecto> proyectos;
     
     
@@ -45,7 +45,23 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, List<Educacion> educaciones) {
+    //constructor para ediciones de persona
+    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ocupacion = ocupacion;
+        this.bannerUrl = bannerUrl;
+        this.email = email;
+        this.linkedinUrl = linkedinUrl;
+        this.githubUrl = githubUrl;
+        this.descripcion = descripcion;
+        this.imgUrl = imgUrl;
+    }
+
+    
+    
+    public Persona(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, List<Educacion> educaciones, List<Experiencia> experiencias, List<HabilidadTecnica> habTecnicas, List<HabilidadBlanda> habBlandas, List<Proyecto> proyectos) {
+        this.id = id;
         this.nombre = nombre;
         this.ocupacion = ocupacion;
         this.bannerUrl = bannerUrl;
@@ -55,7 +71,13 @@ public class Persona {
         this.descripcion = descripcion;
         this.imgUrl = imgUrl;
         this.educaciones = educaciones;
+        this.experiencias = experiencias;
+        this.habTecnicas = habTecnicas;
+        this.habBlandas = habBlandas;
+        this.proyectos = proyectos;
     }
+
+    
 
     
 

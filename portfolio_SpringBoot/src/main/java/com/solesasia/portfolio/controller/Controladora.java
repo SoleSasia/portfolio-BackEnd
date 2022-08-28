@@ -2,6 +2,7 @@ package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.dto.EduDto;
 import com.solesasia.portfolio.dto.HabTecnicaDto;
+import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.dto.RespuestaDto;
 import com.solesasia.portfolio.model.Educacion;
@@ -53,12 +54,19 @@ public class Controladora {
         PortfolioDto portfolio = serviPortfolio.getPortfolio();
         return new ResponseEntity<>(portfolio, HttpStatus.OK);
     }
+
     
     @PutMapping ("/editarPersona")
-    public boolean editarPersona(@RequestBody Persona perso) {
-        return serviPortfolio.editarPersona(perso);
+    public ResponseEntity<RespuestaDto> editarPersona(@RequestBody PersoDto perso) {
+        if (!serviPortfolio.editarPersona(perso)){
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe.");
+            return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
+        }
+        RespuestaDto resp = new RespuestaDto(true, "¡La información personal ha sido actualizada!");
+        return new ResponseEntity(resp, HttpStatus.OK);
     }
     
+    //para pruebas REVISAR SI SERÁ NECESARIO
     @GetMapping ("/persona")
     @ResponseBody
     public ResponseEntity<Persona> getPersona() {

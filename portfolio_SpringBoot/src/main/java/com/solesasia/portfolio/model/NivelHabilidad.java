@@ -22,7 +22,7 @@ public class NivelHabilidad implements Serializable {
     private String nombreNivel;
     
     @JsonIgnore
-    @OneToMany(mappedBy = "id")
+    @OneToMany(mappedBy = "nivel")
     private List<HabilidadTecnica> habTecnicas;
  
 

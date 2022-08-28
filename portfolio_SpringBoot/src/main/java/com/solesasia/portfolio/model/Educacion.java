@@ -4,7 +4,6 @@ package com.solesasia.portfolio.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,9 +28,6 @@ public class Educacion implements Serializable {
     private String descripcionEdu;
     private String urlLogoEdu;
     
-    
-    
-   
 
     public Educacion() {
     }

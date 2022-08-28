@@ -19,27 +19,27 @@ public class Experiencia implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "persona_id")
+    private Persona persona;
     private String puestoExpe;
     private String periodoExpe;
     private String organismoExpe;
     private String descripcionExpe;
     private String urlLogoExpe;
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "persona_id")
-    private Persona persona;
-    //private Long personaId;
+    
 
     public Experiencia() {
     }
 
-    public Experiencia(String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe) {
+    public Experiencia(Persona persona, String puestoExpe, String periodoExpe, String organismoExpe, String descripcionExpe, String urlLogoExpe) {
+        this.persona = persona;
         this.puestoExpe = puestoExpe;
         this.periodoExpe = periodoExpe;
         this.organismoExpe = organismoExpe;
         this.descripcionExpe = descripcionExpe;
         this.urlLogoExpe = urlLogoExpe;
-        
     }
 
 }

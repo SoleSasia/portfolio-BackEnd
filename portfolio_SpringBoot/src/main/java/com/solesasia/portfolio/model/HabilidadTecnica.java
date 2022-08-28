@@ -3,7 +3,6 @@ package com.solesasia.portfolio.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,11 +18,11 @@ public class HabilidadTecnica implements Serializable {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id; 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "persona_id")
     private Persona persona;   
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "nivel_id")
     private NivelHabilidad nivel;
     private String nombreHabilidad;

@@ -1,6 +1,7 @@
 
 package com.solesasia.portfolio.service;
 
+import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.model.Persona;
 
@@ -11,7 +12,7 @@ public interface IPortfolioService {
     public Persona getPersona();
     
     //Modificar persona
-    public boolean editarPersona(Persona perso);
+    public boolean editarPersona(PersoDto perso);
    
     //Lectura porfolio
     public PortfolioDto getPortfolio();
