@@ -2,15 +2,14 @@
 package com.solesasia.portfolio.service;
 
 
-import com.solesasia.portfolio.model.Experiencia;
-import java.util.List;
+import com.solesasia.portfolio.dto.ExpeDto;
 
 
 public interface IExperienciaService {
     
-    public void crearExperiencia(Experiencia expe);
+    public void crearExperiencia(ExpeDto expe);
        
-    public boolean editarExperiencia(Long id, Experiencia expe);
+    public boolean editarExperiencia(Long id, ExpeDto expe);
     
     public void borrarExperiencia(Long id);
 }

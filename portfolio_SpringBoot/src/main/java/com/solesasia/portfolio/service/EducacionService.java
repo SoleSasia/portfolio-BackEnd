@@ -14,7 +14,7 @@ import com.solesasia.portfolio.repository.PersonaRepository;
 public class EducacionService implements IEducacionService {
 
     /* Inyecto el repositorio 
-    La interfaz EducacionRepository (en la capa repository) será quien haga la conexion 
+    La interfaz en la capa repository será quien haga la conexion 
     con JPA y será la intermediaria entre la base de datos y todos los metodos de JPA*/
     @Autowired public EducacionRepository repoEdu;
     @Autowired public PersonaRepository repoPerso;

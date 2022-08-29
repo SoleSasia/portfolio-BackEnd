@@ -1,6 +1,7 @@
 package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.dto.EduDto;
+import com.solesasia.portfolio.dto.ExpeDto;
 import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
@@ -60,27 +61,27 @@ public class Controladora {
     @PutMapping ("/editarPersona")
     public ResponseEntity<RespuestaDto> editarPersona(@RequestBody PersoDto perso) {
         if (!serviPortfolio.editarPersona(perso)){
-            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡La información personal ha sido actualizada!");
         return new ResponseEntity(resp, HttpStatus.OK);
     }
-    
-    //para pruebas REVISAR SI SERÁ NECESARIO
+    //=============================================
+    //para pruebas 
     @GetMapping ("/persona")
     @ResponseBody
     public ResponseEntity<Persona> getPersona() {
         Persona perso = serviPortfolio.getPersona();
         return new ResponseEntity<>(perso, HttpStatus.OK);
     }
-    
+     //para pruebas 
     @GetMapping ("/listaEdu")
     @ResponseBody
     public List<EduDto> listarEduDto(){
         return serviPortfolio.listarEduDto();
     }
-    
+    //============================================
     
   // PROYECTO ABM 
     
@@ -97,7 +98,7 @@ public class Controladora {
     @PutMapping ("/editarProyecto/{id}")
     public ResponseEntity<RespuestaDto> editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
         if (!serviProyecto.editarProyecto(id, proyecto)){
-            RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido actualizado!");
@@ -120,7 +121,7 @@ public class Controladora {
     @PutMapping ("/editarHabBlanda/{id}")
     public ResponseEntity<RespuestaDto> editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
         if (!serviHabBlanda.editarHabBlanda(id, habBlanda)) {
-            RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido actualizado!");
@@ -143,7 +144,7 @@ public class Controladora {
     @PutMapping ("/editarHabTecnica/{id}")
     public ResponseEntity<RespuestaDto> editarHabTecnica(@PathVariable Long id, @RequestBody HabTecnicaDto habTecnica) {
         if (!serviHabTecnica.editarHabTecnica(id, habTecnica)) {
-            RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido actualizado!");
@@ -155,9 +156,9 @@ public class Controladora {
   // EXPERIENCIA ABM
     
     @PostMapping ("/nuevaExpe")
-    public ResponseEntity<RespuestaDto> agregarExperiencia(@RequestBody Experiencia expe){
+    public ResponseEntity<RespuestaDto> agregarExperiencia(@RequestBody ExpeDto expe){
         serviExpe.crearExperiencia(expe);
-        RespuestaDto resp = new RespuestaDto(true, "¡La experiencia ha sido agregada correctamente!");
+        RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido agregado!");
         return new ResponseEntity(resp, HttpStatus.CREATED);
     }
     
@@ -168,9 +169,9 @@ public class Controladora {
     }
     
     @PutMapping ("/editarExpe/{id}")
-    public ResponseEntity<RespuestaDto> editarExperiencia(@PathVariable Long id, @RequestBody Experiencia expe) {
+    public ResponseEntity<RespuestaDto> editarExperiencia(@PathVariable Long id, @RequestBody ExpeDto expe) {
         if (!serviExpe.editarExperiencia(id, expe)) {
-            RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido actualizado!.");
@@ -183,7 +184,7 @@ public class Controladora {
     @PostMapping ("/nuevaEdu")
     public ResponseEntity<RespuestaDto> agregarEducacion(@RequestBody EduDto edu){
         serviEdu.crearEducacion(edu);
-        RespuestaDto resp = new RespuestaDto(true, "¡La educación ha sido agregada correctamente!");
+        RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido agregado!");
         return new ResponseEntity(resp, HttpStatus.CREATED);
     }
     
@@ -196,7 +197,7 @@ public class Controladora {
     @PutMapping ("/editarEdu/{id}")
     public ResponseEntity<RespuestaDto> editarEducacion(@PathVariable Long id, @RequestBody EduDto edu) {
         if (!serviEdu.editarEducacion(id, edu)) {
-            RespuestaDto resp = new RespuestaDto(false, "El id proporcionado no existe.");
+            RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
         }
         RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido actualizado!");
