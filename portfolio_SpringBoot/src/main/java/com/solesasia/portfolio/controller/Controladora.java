@@ -28,6 +28,7 @@ import com.solesasia.portfolio.service.IHabilidadBlandaService;
 import com.solesasia.portfolio.service.IHabilidadTecnicaService;
 import com.solesasia.portfolio.service.IPortfolioService;
 import com.solesasia.portfolio.service.IProyectoService;
+import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -72,6 +73,12 @@ public class Controladora {
     public ResponseEntity<Persona> getPersona() {
         Persona perso = serviPortfolio.getPersona();
         return new ResponseEntity<>(perso, HttpStatus.OK);
+    }
+    
+    @GetMapping ("/listaEdu")
+    @ResponseBody
+    public List<EduDto> listarEduDto(){
+        return serviPortfolio.listarEduDto();
     }
     
     

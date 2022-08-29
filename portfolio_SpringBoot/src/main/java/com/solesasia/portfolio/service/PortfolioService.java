@@ -1,10 +1,15 @@
 
 package com.solesasia.portfolio.service;
 
+import com.solesasia.portfolio.dto.EduDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
+import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Persona;
+import com.solesasia.portfolio.repository.EducacionRepository;
 import com.solesasia.portfolio.repository.PersonaRepository;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +18,7 @@ public class PortfolioService implements IPortfolioService {
     
     //inyecta las dependencias necesarias
     @Autowired public PersonaRepository repoPersona; 
+    @Autowired public EducacionRepository repoEdu;
     
     
     @Override
@@ -34,17 +40,38 @@ public class PortfolioService implements IPortfolioService {
             return true;
         }
     }
+    
+    @Override
+    public List<EduDto> listarEduDto() {
+        List<Educacion> listaEdu = repoEdu.findAll();
+        List<EduDto> listaEduDto = new ArrayList<EduDto>();
+        for (int i = 0; i < listaEdu.size(); i++) {
+            Educacion edu = listaEdu.get(i);
+            EduDto eduDto = new EduDto(edu.getId(), edu.getPersona().getId(), edu.getTituloEdu(), edu.getPeriodoEdu(), edu.getInstitucionEdu(), edu.getDescripcionEdu(), edu.getUrlLogoEdu());
+            listaEduDto.add(eduDto);
+        }
+
+        return listaEduDto;
+    }
 
     
+    
+    
+    
+
+//necesito mandar al front las listas de dtos y no de models (edu, expe, etc
     @Override
     public PortfolioDto getPortfolio() {
 
         // recupera los datos desde la persistencia
         Persona perso = this.getPersona();
+        List<EduDto> listaEduDto = this.listarEduDto();
 
+   
+        
         // asigna los datos recuperados al portfolio
         PortfolioDto portfolio = new PortfolioDto();
-        
+        //datos de persona
         portfolio.setId(perso.getId());
         portfolio.setNombre(perso.getNombre());
         portfolio.setOcupacion(perso.getOcupacion());
@@ -54,7 +81,8 @@ public class PortfolioService implements IPortfolioService {
         portfolio.setGithubUrl(perso.getGithubUrl());
         portfolio.setDescripcion(perso.getDescripcion());
         portfolio.setImgUrl(perso.getImgUrl());
-        portfolio.setEducaciones(perso.getEducaciones());
+        
+        portfolio.setEducaciones(listaEduDto);
         portfolio.setExperiencias(perso.getExperiencias());
         portfolio.setHabTecnicas(perso.getHabTecnicas());
         portfolio.setHabBlandas(perso.getHabBlandas());

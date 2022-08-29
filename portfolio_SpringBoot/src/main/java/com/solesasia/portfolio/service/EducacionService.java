@@ -33,9 +33,13 @@ public class EducacionService implements IEducacionService {
         if (!repoEdu.existsById(id)) {
             return false;
         } else {
-            edu.setId(id);
-            Persona perso = repoPerso.findById(edu.getPersonaId()).orElse(null);
-            Educacion eduEditada = new Educacion(perso, edu.getTituloEdu(), edu.getPeriodoEdu(), edu.getInstitucionEdu(), edu.getDescripcionEdu(), edu.getUrlLogoEdu());
+            Educacion eduEditada = repoEdu.findById(id).orElse(null);
+            eduEditada.setPersona(repoPerso.findById(edu.getPersonaId()).orElse(null));
+            eduEditada.setTituloEdu(edu.getTituloEdu());
+            eduEditada.setPeriodoEdu(edu.getPeriodoEdu());
+            eduEditada.setInstitucionEdu(edu.getInstitucionEdu());
+            eduEditada.setDescripcionEdu(edu.getDescripcionEdu());
+            eduEditada.setUrlLogoEdu(edu.getUrlLogoEdu());
             repoEdu.save(eduEditada);
             return true;
         }
