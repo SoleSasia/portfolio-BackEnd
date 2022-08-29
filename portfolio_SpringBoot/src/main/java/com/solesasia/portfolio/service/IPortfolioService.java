@@ -7,7 +7,7 @@ import com.solesasia.portfolio.dto.HabBlandaDto;
 import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
-import com.solesasia.portfolio.dto.ProyectoDto;
+import com.solesasia.portfolio.dto.ProyeDto;
 import com.solesasia.portfolio.model.Persona;
 import java.util.List;
 
@@ -28,7 +28,7 @@ public interface IPortfolioService {
     
     public List<HabBlandaDto> listarHabBlandaDto();
     
-    public List<ProyectoDto> listarProyeDto();
+    public List<ProyeDto> listarProyeDto();
    
     //Lectura porfolio
     public PortfolioDto getPortfolio();

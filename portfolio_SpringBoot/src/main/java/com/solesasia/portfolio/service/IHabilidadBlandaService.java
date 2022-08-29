@@ -1,14 +1,14 @@
 
 package com.solesasia.portfolio.service;
 
-import com.solesasia.portfolio.model.HabilidadBlanda;
+import com.solesasia.portfolio.dto.HabBlandaDto;
 
 
 public interface IHabilidadBlandaService {
     
-    public void crearHabBlanda(HabilidadBlanda habBlanda);
+    public void crearHabBlanda(HabBlandaDto habBlanda);
     
-    public boolean editarHabBlanda(Long id, HabilidadBlanda habBlanda);
+    public boolean editarHabBlanda(Long id, HabBlandaDto habBlanda);
     
     public void borrarHabBlanda(Long id);
     

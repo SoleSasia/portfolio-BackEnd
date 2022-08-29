@@ -2,16 +2,14 @@ package com.solesasia.portfolio.controller;
 
 import com.solesasia.portfolio.dto.EduDto;
 import com.solesasia.portfolio.dto.ExpeDto;
+import com.solesasia.portfolio.dto.HabBlandaDto;
 import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
+import com.solesasia.portfolio.dto.ProyeDto;
 import com.solesasia.portfolio.dto.RespuestaDto;
-import com.solesasia.portfolio.model.Educacion;
-import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
-import com.solesasia.portfolio.model.HabilidadTecnica;
 import com.solesasia.portfolio.model.Persona;
-import com.solesasia.portfolio.model.Proyecto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -86,17 +84,20 @@ public class Controladora {
   // PROYECTO ABM 
     
     @PostMapping ("/nuevoProyecto")
-    public void crearProyecto(@RequestBody Proyecto proyecto){
+    public ResponseEntity<RespuestaDto> agregarProyecto(@RequestBody ProyeDto proyecto){
         serviProyecto.crearProyecto(proyecto);
+        RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido agregado!");
+        return new ResponseEntity(resp, HttpStatus.CREATED);
     }
     
     @DeleteMapping ("/borrarProyecto/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void borrarProyecto(@PathVariable Long id){
         serviProyecto.borrarProyecto(id);
     }
     
     @PutMapping ("/editarProyecto/{id}")
-    public ResponseEntity<RespuestaDto> editarProyecto(@PathVariable Long id, @RequestBody Proyecto proyecto){
+    public ResponseEntity<RespuestaDto> editarProyecto(@PathVariable Long id, @RequestBody ProyeDto proyecto){
         if (!serviProyecto.editarProyecto(id, proyecto)){
             RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
@@ -109,17 +110,21 @@ public class Controladora {
   // HABILIDAD BLANDA ABM
     
     @PostMapping ("/nuevaHabBlanda")
-    public void crearHabBlanda(@RequestBody HabilidadBlanda habBlanda){
+    public ResponseEntity<RespuestaDto> agregarHabBlanda(@RequestBody HabBlandaDto habBlanda){
         serviHabBlanda.crearHabBlanda(habBlanda);
+        RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido agregado!");
+        return new ResponseEntity(resp, HttpStatus.CREATED);
+
     }
     
     @DeleteMapping ("/borrarHabBlanda/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void borrarHabBlanda(@PathVariable Long id){
         serviHabBlanda.borrarHabBlanda(id);
     }
     
     @PutMapping ("/editarHabBlanda/{id}")
-    public ResponseEntity<RespuestaDto> editarHabBlanda(@PathVariable Long id, @RequestBody HabilidadBlanda habBlanda){
+    public ResponseEntity<RespuestaDto> editarHabBlanda(@PathVariable Long id, @RequestBody HabBlandaDto habBlanda){
         if (!serviHabBlanda.editarHabBlanda(id, habBlanda)) {
             RespuestaDto resp = new RespuestaDto(false, "Ups! El id proporcionado no existe :(");
             return new ResponseEntity(resp, HttpStatus.NOT_FOUND);
@@ -132,11 +137,14 @@ public class Controladora {
   // HABILIDAD TECNICA ABM
     
     @PostMapping ("/nuevaHabTecnica")
-    public void crearHabTecnica(@RequestBody HabTecnicaDto habTecnica){
+    public ResponseEntity<RespuestaDto> agregarHabTecnica(@RequestBody HabTecnicaDto habTecnica){
         serviHabTecnica.crearHabTecnica(habTecnica);
+        RespuestaDto resp = new RespuestaDto(true, "¡El elemento ha sido agregado!");
+        return new ResponseEntity(resp, HttpStatus.CREATED);
     }
     
     @DeleteMapping ("borrarHabTecnica/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void borrarHabTecnica(@PathVariable Long id) {
         serviHabTecnica.borrarHabTecnica(id);
     }   

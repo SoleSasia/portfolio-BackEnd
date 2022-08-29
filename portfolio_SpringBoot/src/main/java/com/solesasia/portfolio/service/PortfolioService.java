@@ -6,7 +6,7 @@ import com.solesasia.portfolio.dto.HabBlandaDto;
 import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
-import com.solesasia.portfolio.dto.ProyectoDto;
+import com.solesasia.portfolio.dto.ProyeDto;
 import com.solesasia.portfolio.model.Educacion;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.HabilidadBlanda;
@@ -45,7 +45,7 @@ public class PortfolioService implements IPortfolioService {
         List<ExpeDto> listaExpeDto = this.listarExpeDto();
         List<HabTecnicaDto> listaHabTecnicaDto = this.listarHabTecnicaDto();
         List<HabBlandaDto> listaHabBlandaDto = this.listarHabBlandaDto();
-        List<ProyectoDto> listaProyeDto = this.listarProyeDto();
+        List<ProyeDto> listaProyeDto = this.listarProyeDto();
         
         // asigna los datos recuperados al portfolio
         PortfolioDto portfolio = new PortfolioDto();
@@ -137,12 +137,12 @@ public class PortfolioService implements IPortfolioService {
     }
     
     @Override
-    public List<ProyectoDto> listarProyeDto() {
+    public List<ProyeDto> listarProyeDto() {
         List<Proyecto> listaProye = repoProye.findAll();
-        List<ProyectoDto> listaProyeDto = new ArrayList<ProyectoDto>();
+        List<ProyeDto> listaProyeDto = new ArrayList<ProyeDto>();
         for (int i = 0; i < listaProye.size(); i++) {
             Proyecto proye = listaProye.get(i);
-            ProyectoDto proyeDto = new ProyectoDto(proye.getId(), proye.getPersona().getId(), proye.getNombreProye(), proye.getDescripcionProye(), proye.getImgUrl(), proye.getRepoUrl(), proye.getLiveUrl());
+            ProyeDto proyeDto = new ProyeDto(proye.getId(), proye.getPersona().getId(), proye.getNombreProye(), proye.getDescripcionProye(), proye.getImgUrl(), proye.getRepoUrl(), proye.getLiveUrl());
             listaProyeDto.add(proyeDto);
         }
         return listaProyeDto;

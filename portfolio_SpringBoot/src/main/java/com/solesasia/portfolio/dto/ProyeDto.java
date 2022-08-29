@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Setter @Getter
-public class ProyectoDto {
+public class ProyeDto {
     
     private Long id;
     private Long personaId;
@@ -14,10 +14,10 @@ public class ProyectoDto {
     private String repoUrl;
     private String liveUrl;
 
-    public ProyectoDto() {
+    public ProyeDto() {
     }
 
-    public ProyectoDto(Long id, Long personaId, String nombreProye, String descripcionProye, String imgUrl, String repoUrl, String liveUrl) {
+    public ProyeDto(Long id, Long personaId, String nombreProye, String descripcionProye, String imgUrl, String repoUrl, String liveUrl) {
         this.id = id;
         this.personaId = personaId;
         this.nombreProye = nombreProye;

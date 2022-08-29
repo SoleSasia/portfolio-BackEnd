@@ -21,12 +21,12 @@ public class PortfolioDto {
     private List<ExpeDto> experiencias;   
     private List<HabTecnicaDto> habTecnicas;   
     private List<HabBlandaDto> habBlandas;
-    private List<ProyectoDto> proyectos;
+    private List<ProyeDto> proyectos;
 
     public PortfolioDto() {
     }
 
-    public PortfolioDto(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, List<EduDto> educaciones, List<ExpeDto> experiencias, List<HabTecnicaDto> habTecnicas, List<HabBlandaDto> habBlandas, List<ProyectoDto> proyectos) {
+    public PortfolioDto(Long id, String nombre, String ocupacion, String bannerUrl, String email, String linkedinUrl, String githubUrl, String descripcion, String imgUrl, List<EduDto> educaciones, List<ExpeDto> experiencias, List<HabTecnicaDto> habTecnicas, List<HabBlandaDto> habBlandas, List<ProyeDto> proyectos) {
         this.id = id;
         this.nombre = nombre;
         this.ocupacion = ocupacion;

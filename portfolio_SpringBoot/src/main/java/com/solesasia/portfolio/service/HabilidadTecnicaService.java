@@ -31,10 +31,11 @@ public class HabilidadTecnicaService implements IHabilidadTecnicaService {
         if (!repoHabTecnica.existsById(id)) {
             return false;
         } else {
-            habTecnica.setId(id);
-            Persona perso = repoPerso.findById(habTecnica.getPersonaId()).orElse(null);
-            NivelHabilidad nivelHab = repoNivel.findById(habTecnica.getNivelId()).orElse(null);
-            HabilidadTecnica HabTecnicaEditada = new HabilidadTecnica(perso, nivelHab, habTecnica.getNombreHabilidad(), habTecnica.getUrlIcono());
+            HabilidadTecnica HabTecnicaEditada = repoHabTecnica.findById(id).orElse(null);
+            HabTecnicaEditada.setPersona(repoPerso.findById(habTecnica.getPersonaId()).orElse(null));
+            HabTecnicaEditada.setNivel(repoNivel.findById(habTecnica.getNivelId()).orElse(null));
+            HabTecnicaEditada.setNombreHabilidad(habTecnica.getNombreHabilidad());
+            HabTecnicaEditada.setUrlIcono(habTecnica.getUrlIcono());
             repoHabTecnica.save(HabTecnicaEditada);
             return true;
         }
