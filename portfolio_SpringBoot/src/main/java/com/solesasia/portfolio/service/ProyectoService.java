@@ -28,7 +28,7 @@ public class ProyectoService implements IProyectoService {
             return false;
         } else {
             Proyecto proyeEditado = repoProye.findById(id).orElse(null);
-            proyeEditado.setPersona(repoPerso.findById(id).orElse(null));
+            proyeEditado.setPersona(repoPerso.findById(proye.getPersonaId()).orElse(null));
             proyeEditado.setNombreProye(proye.getNombreProye());
             proyeEditado.setDescripcionProye(proye.getDescripcionProye());
             proyeEditado.setImgUrl(proye.getImgUrl());
