@@ -20,6 +20,8 @@ public interface IPortfolioService {
     //Modificar persona
     public boolean editarPersona(PersoDto perso);
     
+    public PersoDto getPersoDto();
+    
     public List<EduDto> listarEduDto();
     
     public List<ExpeDto> listarExpeDto();

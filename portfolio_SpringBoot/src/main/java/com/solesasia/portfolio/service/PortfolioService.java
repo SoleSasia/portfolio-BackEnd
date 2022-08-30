@@ -40,7 +40,7 @@ public class PortfolioService implements IPortfolioService {
     public PortfolioDto getPortfolio() {
 
         // recupera los datos desde la persistencia
-        Persona perso = this.getPersona();
+        PersoDto persoDto = this.getPersoDto();
         List<EduDto> listaEduDto = this.listarEduDto();
         List<ExpeDto> listaExpeDto = this.listarExpeDto();
         List<HabTecnicaDto> listaHabTecnicaDto = this.listarHabTecnicaDto();
@@ -50,15 +50,7 @@ public class PortfolioService implements IPortfolioService {
         // asigna los datos recuperados al portfolio
         PortfolioDto portfolio = new PortfolioDto();
         //datos de persona
-        portfolio.setId(perso.getId());
-        portfolio.setNombre(perso.getNombre());
-        portfolio.setOcupacion(perso.getOcupacion());
-        portfolio.setBannerUrl(perso.getBannerUrl());
-        portfolio.setEmail(perso.getEmail());
-        portfolio.setLinkedinUrl(perso.getLinkedinUrl());
-        portfolio.setGithubUrl(perso.getGithubUrl());
-        portfolio.setDescripcion(perso.getDescripcion());
-        portfolio.setImgUrl(perso.getImgUrl());
+        portfolio.setPersona(persoDto);
         //listas de secciones
         portfolio.setEducaciones(listaEduDto);
         portfolio.setExperiencias(listaExpeDto);
@@ -75,6 +67,13 @@ public class PortfolioService implements IPortfolioService {
         long personaId = 1; //"Harcodeo" id de la única persona disponible
         Persona perso = repoPersona.findById(personaId).orElse(null);
         return perso;
+    }
+    
+    @Override
+    public PersoDto getPersoDto() {
+        Persona perso = this.getPersona();
+        PersoDto persoDto = new PersoDto(perso.getId(),perso.getNombre(), perso.getOcupacion(),perso.getBannerUrl(),perso.getEmail(),perso.getLinkedinUrl(),perso.getGithubUrl(),perso.getDescripcion(),perso.getImgUrl());
+        return persoDto;
     }
 
     @Override
