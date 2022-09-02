@@ -33,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @RestController
-@CrossOrigin (origins = "https://portfoliosole-57c17.web.app/")
+@CrossOrigin (origins = "https://portfoliosole-57c17.web.app/", maxAge = 3600)
 public class Controladora {
     
     //inyecta las dependencias necesarias para ejecutar las peticiones que vengan del cliente
