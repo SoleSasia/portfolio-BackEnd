@@ -8,7 +8,6 @@ import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.dto.ProyeDto;
 import com.solesasia.portfolio.dto.RespuestaDto;
-import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,7 +33,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @RestController
-@CrossOrigin (origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin (origins = "https://portfoliosole-57c17.web.app/")
 public class Controladora {
     
     //inyecta las dependencias necesarias para ejecutar las peticiones que vengan del cliente
@@ -65,7 +64,7 @@ public class Controladora {
         RespuestaDto resp = new RespuestaDto(true, "¡La información personal ha sido actualizada!");
         return new ResponseEntity(resp, HttpStatus.OK);
     }
-    //=============================================
+    /*=============================================
     //para pruebas 
     @GetMapping ("/persona")
     @ResponseBody
@@ -79,7 +78,7 @@ public class Controladora {
     public List<EduDto> listarEduDto(){
         return serviPortfolio.listarEduDto();
     }
-    //============================================
+    //============================================*/
     
   // PROYECTO ABM 
     
