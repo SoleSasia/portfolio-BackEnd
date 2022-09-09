@@ -7,7 +7,7 @@ En este repositorio se encuentra la parte Back-end de mi portfolio personal, Pro
 
 * API ReST desarrollada integramente en Java, con la utilización de Spring Boot y siguiendo el modelo MVC.
 
-* Para la persistencia de datos se utilizó MySQL. El script SQL de la base de datos puede encontrarse dentro de este repositorio.
+* Para la persistencia de datos se utilizó MySQL. El script SQL de la base de datos puede encontrarse dentro de este repositorio con el nombre: portfolio_solesasia.sql
 
 * A continuación, se incluye el Diagrama de Entidad-Relación (DER) utilizado en la base de datos relacional, y que se verá reflejado en las entidades o modelos del Backend:
 
