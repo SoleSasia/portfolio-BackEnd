@@ -4,17 +4,16 @@ package com.solesasia.portfolio.service;
 import com.solesasia.portfolio.dto.ExpeDto;
 import com.solesasia.portfolio.model.Experiencia;
 import com.solesasia.portfolio.model.Persona;
-import com.solesasia.portfolio.repository.ExperienciaRepository;
-import com.solesasia.portfolio.repository.PersonaRepository;
-import java.util.List;
+import com.solesasia.portfolio.repository.ExperienceRepository;
+import com.solesasia.portfolio.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ExperienciaService implements IExperienciaService {
     
-    @Autowired public ExperienciaRepository repoExpe;
-    @Autowired public PersonaRepository repoPerso;
+    @Autowired public ExperienceRepository repoExpe;
+    @Autowired public PersonRepository repoPerso;
 
     
     @Override

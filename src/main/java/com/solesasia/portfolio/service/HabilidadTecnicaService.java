@@ -5,18 +5,18 @@ import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.model.HabilidadTecnica;
 import com.solesasia.portfolio.model.NivelHabilidad;
 import com.solesasia.portfolio.model.Persona;
-import com.solesasia.portfolio.repository.HabilidadTecnicaRepository;
-import com.solesasia.portfolio.repository.NivelHabilidadRepository;
-import com.solesasia.portfolio.repository.PersonaRepository;
+import com.solesasia.portfolio.repository.HardSkillRepository;
+import com.solesasia.portfolio.repository.SkillLevelRepository;
+import com.solesasia.portfolio.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class HabilidadTecnicaService implements IHabilidadTecnicaService {
 
-    @Autowired public HabilidadTecnicaRepository repoHabTecnica;
-    @Autowired public PersonaRepository repoPerso;
-    @Autowired public NivelHabilidadRepository repoNivel;
+    @Autowired public HardSkillRepository repoHabTecnica;
+    @Autowired public PersonRepository repoPerso;
+    @Autowired public SkillLevelRepository repoNivel;
 
     @Override
     public void crearHabTecnica(HabTecnicaDto habTecnica) {

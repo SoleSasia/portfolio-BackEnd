@@ -1,10 +1,10 @@
 package com.solesasia.portfolio.repository;
 
-import com.solesasia.portfolio.model.Persona;
+import com.solesasia.portfolio.model.HabilidadTecnica;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonaRepository extends JpaRepository <Persona, Long> {
+public interface HardSkillRepository extends JpaRepository <HabilidadTecnica, Long> {
     
 }

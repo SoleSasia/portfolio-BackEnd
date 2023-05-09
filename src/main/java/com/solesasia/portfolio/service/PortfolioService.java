@@ -13,12 +13,12 @@ import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.HabilidadTecnica;
 import com.solesasia.portfolio.model.Persona;
 import com.solesasia.portfolio.model.Proyecto;
-import com.solesasia.portfolio.repository.EducacionRepository;
-import com.solesasia.portfolio.repository.ExperienciaRepository;
-import com.solesasia.portfolio.repository.HabilidadBlandaRepository;
-import com.solesasia.portfolio.repository.HabilidadTecnicaRepository;
-import com.solesasia.portfolio.repository.PersonaRepository;
-import com.solesasia.portfolio.repository.ProyectoRepository;
+import com.solesasia.portfolio.repository.EducationRepository;
+import com.solesasia.portfolio.repository.ExperienceRepository;
+import com.solesasia.portfolio.repository.SoftSkillRepository;
+import com.solesasia.portfolio.repository.HardSkillRepository;
+import com.solesasia.portfolio.repository.PersonRepository;
+import com.solesasia.portfolio.repository.ProjectRepository;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +28,12 @@ import org.springframework.stereotype.Service;
 public class PortfolioService implements IPortfolioService {
     
     //inyecta las dependencias necesarias
-    @Autowired public PersonaRepository repoPersona; 
-    @Autowired public EducacionRepository repoEdu;
-    @Autowired public ExperienciaRepository repoExpe;
-    @Autowired public HabilidadTecnicaRepository repoTecnica;
-    @Autowired public HabilidadBlandaRepository repoBlanda;
-    @Autowired public ProyectoRepository repoProye;
+    @Autowired public PersonRepository repoPersona;
+    @Autowired public EducationRepository repoEdu;
+    @Autowired public ExperienceRepository repoExpe;
+    @Autowired public HardSkillRepository repoTecnica;
+    @Autowired public SoftSkillRepository repoBlanda;
+    @Autowired public ProjectRepository repoProye;
     
     
     @Override

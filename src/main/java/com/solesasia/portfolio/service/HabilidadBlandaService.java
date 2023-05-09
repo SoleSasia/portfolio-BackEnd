@@ -4,16 +4,16 @@ package com.solesasia.portfolio.service;
 import com.solesasia.portfolio.dto.HabBlandaDto;
 import com.solesasia.portfolio.model.HabilidadBlanda;
 import com.solesasia.portfolio.model.Persona;
-import com.solesasia.portfolio.repository.HabilidadBlandaRepository;
-import com.solesasia.portfolio.repository.PersonaRepository;
+import com.solesasia.portfolio.repository.SoftSkillRepository;
+import com.solesasia.portfolio.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class HabilidadBlandaService implements IHabilidadBlandaService {
 
-    @Autowired public HabilidadBlandaRepository repoHabBlanda;
-    @Autowired public PersonaRepository repoPerso;
+    @Autowired public SoftSkillRepository repoHabBlanda;
+    @Autowired public PersonRepository repoPerso;
 
     @Override
     public void crearHabBlanda(HabBlandaDto habBlanda) {

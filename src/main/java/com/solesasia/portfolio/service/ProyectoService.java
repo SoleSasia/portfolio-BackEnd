@@ -4,16 +4,16 @@ package com.solesasia.portfolio.service;
 import com.solesasia.portfolio.dto.ProyeDto;
 import com.solesasia.portfolio.model.Persona;
 import com.solesasia.portfolio.model.Proyecto;
-import com.solesasia.portfolio.repository.PersonaRepository;
-import com.solesasia.portfolio.repository.ProyectoRepository;
+import com.solesasia.portfolio.repository.PersonRepository;
+import com.solesasia.portfolio.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ProyectoService implements IProyectoService {
 
-    @Autowired public ProyectoRepository repoProye;
-    @Autowired public PersonaRepository repoPerso;
+    @Autowired public ProjectRepository repoProye;
+    @Autowired public PersonRepository repoPerso;
     
     @Override
     public void crearProyecto(ProyeDto proye) {
