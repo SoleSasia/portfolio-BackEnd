@@ -1,13 +1,8 @@
 
 package com.solesasia.portfolio.service;
 
-import com.solesasia.portfolio.dto.EduDto;
-import com.solesasia.portfolio.dto.ExpeDto;
-import com.solesasia.portfolio.dto.HabBlandaDto;
-import com.solesasia.portfolio.dto.HabTecnicaDto;
-import com.solesasia.portfolio.dto.PersoDto;
-import com.solesasia.portfolio.dto.PortfolioDto;
-import com.solesasia.portfolio.dto.ProyeDto;
+import com.solesasia.portfolio.dto.*;
+import com.solesasia.portfolio.dto.EducationDto;
 import com.solesasia.portfolio.model.Person;
 import java.util.List;
 
@@ -18,19 +13,19 @@ public interface IPortfolioService {
     public Person getPersona();
     
     //Modificar persona
-    public boolean editarPersona(PersoDto perso);
+    public boolean editarPersona(PersonDto perso);
     
-    public PersoDto getPersoDto();
+    public PersonDto getPersoDto();
     
-    public List<EduDto> listarEduDto();
+    public List<EducationDto> listarEduDto();
     
-    public List<ExpeDto> listarExpeDto();
+    public List<ExperienceDto> listarExpeDto();
     
-    public List<HabTecnicaDto> listarHabTecnicaDto();
+    public List<hardSkillDto> listarHabTecnicaDto();
     
-    public List<HabBlandaDto> listarHabBlandaDto();
+    public List<SoftSkillDto> listarHabBlandaDto();
     
-    public List<ProyeDto> listarProyeDto();
+    public List<ProjectDto> listarProyeDto();
    
     //Lectura porfolio
     public PortfolioDto getPortfolio();

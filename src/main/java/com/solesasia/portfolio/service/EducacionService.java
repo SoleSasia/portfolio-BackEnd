@@ -1,6 +1,6 @@
 package com.solesasia.portfolio.service;
 
-import com.solesasia.portfolio.dto.EduDto;
+import com.solesasia.portfolio.dto.EducationDto;
 import com.solesasia.portfolio.model.Education;
 import com.solesasia.portfolio.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,25 +21,25 @@ public class EducacionService implements IEducacionService {
 
     //Create - Alta
     @Override
-    public void crearEducacion(EduDto edu) {
-        Person perso = repoPerso.findById(edu.getPersonaId()).orElse(null);
-        Education nuevaEdu = new Education(perso, edu.getTituloEdu(), edu.getPeriodoEdu(), edu.getInstitucionEdu(), edu.getDescripcionEdu(), edu.getUrlLogoEdu());
+    public void crearEducacion(EducationDto edu) {
+        Person perso = repoPerso.findById(edu.getPersonId()).orElse(null);
+        Education nuevaEdu = new Education(perso, edu.getTitle(), edu.getPeriod(), edu.getInstitution(), edu.getDescription(), edu.getLogoUrl());
         repoEdu.save(nuevaEdu);
     }
 
     //Update - Actualizar
     @Override
-    public boolean editarEducacion(Long id, EduDto edu) {
+    public boolean editarEducacion(Long id, EducationDto edu) {
         if (!repoEdu.existsById(id)) {
             return false;
         } else {
             Education eduEditada = repoEdu.findById(id).orElse(null);
-            eduEditada.setPerson(repoPerso.findById(edu.getPersonaId()).orElse(null));
-            eduEditada.setTitle(edu.getTituloEdu());
-            eduEditada.setPeriod(edu.getPeriodoEdu());
-            eduEditada.setInstitution(edu.getInstitucionEdu());
-            eduEditada.setDescription(edu.getDescripcionEdu());
-            eduEditada.setLogoUrl(edu.getUrlLogoEdu());
+            eduEditada.setPerson(repoPerso.findById(edu.getPersonId()).orElse(null));
+            eduEditada.setTitle(edu.getTitle());
+            eduEditada.setPeriod(edu.getPeriod());
+            eduEditada.setInstitution(edu.getInstitution());
+            eduEditada.setDescription(edu.getDescription());
+            eduEditada.setLogoUrl(edu.getLogoUrl());
             repoEdu.save(eduEditada);
             return true;
         }

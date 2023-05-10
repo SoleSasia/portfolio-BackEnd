@@ -1,7 +1,7 @@
 
 package com.solesasia.portfolio.service;
 
-import com.solesasia.portfolio.dto.HabBlandaDto;
+import com.solesasia.portfolio.dto.SoftSkillDto;
 import com.solesasia.portfolio.model.SoftSill;
 import com.solesasia.portfolio.model.Person;
 import com.solesasia.portfolio.repository.SoftSkillRepository;
@@ -16,21 +16,21 @@ public class HabilidadBlandaService implements IHabilidadBlandaService {
     @Autowired public PersonRepository repoPerso;
 
     @Override
-    public void crearHabBlanda(HabBlandaDto habBlanda) {
-        Person perso = repoPerso.findById(habBlanda.getPersonaId()).orElse(null);
-        SoftSill nuevaHabBlanda = new SoftSill(perso, habBlanda.getNombreHabilidad(), habBlanda.getUrlIcono());
+    public void crearHabBlanda(SoftSkillDto habBlanda) {
+        Person perso = repoPerso.findById(habBlanda.getPersonId()).orElse(null);
+        SoftSill nuevaHabBlanda = new SoftSill(perso, habBlanda.getSkillName(), habBlanda.getIconUrl());
         repoHabBlanda.save(nuevaHabBlanda);
     }
 
     @Override
-    public boolean editarHabBlanda(Long id, HabBlandaDto habBlanda) {
+    public boolean editarHabBlanda(Long id, SoftSkillDto habBlanda) {
         if (!repoHabBlanda.existsById(id)) {
             return false;
         } else {
             SoftSill habBlandaEditada = repoHabBlanda.findById(id).orElse(null);
-            habBlandaEditada.setPerson(repoPerso.findById(habBlanda.getPersonaId()).orElse(null));
-            habBlandaEditada.setSkillName(habBlanda.getNombreHabilidad());
-            habBlandaEditada.setIconUrl(habBlanda.getUrlIcono());
+            habBlandaEditada.setPerson(repoPerso.findById(habBlanda.getPersonId()).orElse(null));
+            habBlandaEditada.setSkillName(habBlanda.getSkillName());
+            habBlandaEditada.setIconUrl(habBlanda.getIconUrl());
             repoHabBlanda.save(habBlandaEditada);
             return true;
         }

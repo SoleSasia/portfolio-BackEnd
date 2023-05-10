@@ -4,27 +4,25 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Setter @Getter
 public class PortfolioDto {
     
-    private PersoDto persona;    
-    private List<EduDto> educaciones;   
-    private List<ExpeDto> experiencias;   
-    private List<HabTecnicaDto> habTecnicas;   
-    private List<HabBlandaDto> habBlandas;
-    private List<ProyeDto> proyectos;
+    private PersonDto person;
+    private List<EducationDto> educationDtos;
+    private List<ExperienceDto> experienceDtos;
+    private List<hardSkillDto> hardSkillDtos;
+    private List<SoftSkillDto> softSkillDtos;
+    private List<ProjectDto> projectDtos;
 
     public PortfolioDto() {
     }
 
-    public PortfolioDto(PersoDto persona, List<EduDto> educaciones, List<ExpeDto> experiencias, List<HabTecnicaDto> habTecnicas, List<HabBlandaDto> habBlandas, List<ProyeDto> proyectos) {
-        this.persona = persona;
-        this.educaciones = educaciones;
-        this.experiencias = experiencias;
-        this.habTecnicas = habTecnicas;
-        this.habBlandas = habBlandas;
-        this.proyectos = proyectos;
+    public PortfolioDto(PersonDto person, List<EducationDto> educationDtos, List<ExperienceDto> experienceDtos, List<hardSkillDto> hardSkillDtos, List<SoftSkillDto> softSkillDtos, List<ProjectDto> proyectos) {
+        this.person = person;
+        this.educationDtos = educationDtos;
+        this.experienceDtos = experienceDtos;
+        this.hardSkillDtos = hardSkillDtos;
+        this.softSkillDtos = softSkillDtos;
+        this.projectDtos = proyectos;
     }
- 
 }
