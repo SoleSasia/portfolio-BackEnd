@@ -13,29 +13,28 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class HabilidadTecnica implements Serializable {
+public class HardSkill implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id; 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;   
+    @JoinColumn(name = "person_id")
+    private Person person;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "nivel_id")
-    private NivelHabilidad nivel;
-    private String nombreHabilidad;
-    private String urlIcono;
+    @JoinColumn(name = "level_id")
+    private SkillLevel level;
+    private String skillName;
+    private String iconUrl;
 
-    public HabilidadTecnica() {
+    public HardSkill() {
     }
 
-    public HabilidadTecnica(Persona persona, NivelHabilidad nivel, String nombreHabilidad, String urlIcono) {
-        this.persona = persona;
-        this.nivel = nivel;
-        this.nombreHabilidad = nombreHabilidad;
-        this.urlIcono = urlIcono;
+    public HardSkill(Person person, SkillLevel level, String skillName, String iconUrl) {
+        this.person = person;
+        this.level = level;
+        this.skillName = skillName;
+        this.iconUrl = iconUrl;
     }
-
 }

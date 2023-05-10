@@ -2,9 +2,9 @@
 package com.solesasia.portfolio.service;
 
 import com.solesasia.portfolio.dto.HabTecnicaDto;
-import com.solesasia.portfolio.model.HabilidadTecnica;
-import com.solesasia.portfolio.model.NivelHabilidad;
-import com.solesasia.portfolio.model.Persona;
+import com.solesasia.portfolio.model.HardSkill;
+import com.solesasia.portfolio.model.SkillLevel;
+import com.solesasia.portfolio.model.Person;
 import com.solesasia.portfolio.repository.HardSkillRepository;
 import com.solesasia.portfolio.repository.SkillLevelRepository;
 import com.solesasia.portfolio.repository.PersonRepository;
@@ -20,9 +20,9 @@ public class HabilidadTecnicaService implements IHabilidadTecnicaService {
 
     @Override
     public void crearHabTecnica(HabTecnicaDto habTecnica) {
-        Persona perso = repoPerso.findById(habTecnica.getPersonaId()).orElse(null);
-        NivelHabilidad nivelHab = repoNivel.findById(habTecnica.getNivelId()).orElse(null);
-        HabilidadTecnica nuevaHabTecnica = new HabilidadTecnica(perso, nivelHab, habTecnica.getNombreHabilidad(), habTecnica.getUrlIcono());
+        Person perso = repoPerso.findById(habTecnica.getPersonaId()).orElse(null);
+        SkillLevel nivelHab = repoNivel.findById(habTecnica.getNivelId()).orElse(null);
+        HardSkill nuevaHabTecnica = new HardSkill(perso, nivelHab, habTecnica.getNombreHabilidad(), habTecnica.getUrlIcono());
         repoHabTecnica.save(nuevaHabTecnica);
     }             
                 
@@ -31,11 +31,11 @@ public class HabilidadTecnicaService implements IHabilidadTecnicaService {
         if (!repoHabTecnica.existsById(id)) {
             return false;
         } else {
-            HabilidadTecnica HabTecnicaEditada = repoHabTecnica.findById(id).orElse(null);
-            HabTecnicaEditada.setPersona(repoPerso.findById(habTecnica.getPersonaId()).orElse(null));
-            HabTecnicaEditada.setNivel(repoNivel.findById(habTecnica.getNivelId()).orElse(null));
-            HabTecnicaEditada.setNombreHabilidad(habTecnica.getNombreHabilidad());
-            HabTecnicaEditada.setUrlIcono(habTecnica.getUrlIcono());
+            HardSkill HabTecnicaEditada = repoHabTecnica.findById(id).orElse(null);
+            HabTecnicaEditada.setPerson(repoPerso.findById(habTecnica.getPersonaId()).orElse(null));
+            HabTecnicaEditada.setLevel(repoNivel.findById(habTecnica.getNivelId()).orElse(null));
+            HabTecnicaEditada.setSkillName(habTecnica.getNombreHabilidad());
+            HabTecnicaEditada.setIconUrl(habTecnica.getUrlIcono());
             repoHabTecnica.save(HabTecnicaEditada);
             return true;
         }

@@ -1,10 +1,10 @@
 package com.solesasia.portfolio.repository;
 
-import com.solesasia.portfolio.model.Experiencia;
+import com.solesasia.portfolio.model.Experience;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ExperienceRepository extends JpaRepository <Experiencia, Long> {
+public interface ExperienceRepository extends JpaRepository <Experience, Long> {
     
 }

@@ -13,31 +13,30 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class Proyecto implements Serializable {
+public class Project implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;
-    private String nombreProye;
-    private String descripcionProye;
+    @JoinColumn(name = "person_id")
+    private Person person;
+    private String nameProject;
+    private String descriptionProject;
     private String imgUrl;
-    private String repoUrl;
+    private String sourceCodeUrl;
     private String liveUrl;
-    
 
-    public Proyecto() {
+    public Project() {
     }
 
-    public Proyecto(Persona persona, String nombreProye, String descripcionProye, String imgUrl, String repoUrl, String liveUrl) {
-        this.persona = persona;
-        this.nombreProye = nombreProye;
-        this.descripcionProye = descripcionProye;
+    public Project(Person person, String nameProject, String descriptionProject, String imgUrl,
+                   String sourceCodeUrl, String liveUrl) {
+        this.person = person;
+        this.nameProject = nameProject;
+        this.descriptionProject = descriptionProject;
         this.imgUrl = imgUrl;
-        this.repoUrl = repoUrl;
+        this.sourceCodeUrl = sourceCodeUrl;
         this.liveUrl = liveUrl;
     }
-    
 }

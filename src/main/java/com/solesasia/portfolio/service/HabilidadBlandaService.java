@@ -2,8 +2,8 @@
 package com.solesasia.portfolio.service;
 
 import com.solesasia.portfolio.dto.HabBlandaDto;
-import com.solesasia.portfolio.model.HabilidadBlanda;
-import com.solesasia.portfolio.model.Persona;
+import com.solesasia.portfolio.model.SoftSill;
+import com.solesasia.portfolio.model.Person;
 import com.solesasia.portfolio.repository.SoftSkillRepository;
 import com.solesasia.portfolio.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ public class HabilidadBlandaService implements IHabilidadBlandaService {
 
     @Override
     public void crearHabBlanda(HabBlandaDto habBlanda) {
-        Persona perso = repoPerso.findById(habBlanda.getPersonaId()).orElse(null);
-        HabilidadBlanda nuevaHabBlanda = new HabilidadBlanda(perso, habBlanda.getNombreHabilidad(), habBlanda.getUrlIcono());
+        Person perso = repoPerso.findById(habBlanda.getPersonaId()).orElse(null);
+        SoftSill nuevaHabBlanda = new SoftSill(perso, habBlanda.getNombreHabilidad(), habBlanda.getUrlIcono());
         repoHabBlanda.save(nuevaHabBlanda);
     }
 
@@ -27,10 +27,10 @@ public class HabilidadBlandaService implements IHabilidadBlandaService {
         if (!repoHabBlanda.existsById(id)) {
             return false;
         } else {
-            HabilidadBlanda habBlandaEditada = repoHabBlanda.findById(id).orElse(null);
-            habBlandaEditada.setPersona(repoPerso.findById(habBlanda.getPersonaId()).orElse(null));
-            habBlandaEditada.setNombreHabilidad(habBlanda.getNombreHabilidad());
-            habBlandaEditada.setUrlIcono(habBlanda.getUrlIcono());
+            SoftSill habBlandaEditada = repoHabBlanda.findById(id).orElse(null);
+            habBlandaEditada.setPerson(repoPerso.findById(habBlanda.getPersonaId()).orElse(null));
+            habBlandaEditada.setSkillName(habBlanda.getNombreHabilidad());
+            habBlandaEditada.setIconUrl(habBlanda.getUrlIcono());
             repoHabBlanda.save(habBlandaEditada);
             return true;
         }

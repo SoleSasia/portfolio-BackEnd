@@ -2,8 +2,8 @@
 package com.solesasia.portfolio.service;
 
 import com.solesasia.portfolio.dto.ProyeDto;
-import com.solesasia.portfolio.model.Persona;
-import com.solesasia.portfolio.model.Proyecto;
+import com.solesasia.portfolio.model.Person;
+import com.solesasia.portfolio.model.Project;
 import com.solesasia.portfolio.repository.PersonRepository;
 import com.solesasia.portfolio.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,8 @@ public class ProyectoService implements IProyectoService {
     
     @Override
     public void crearProyecto(ProyeDto proye) {
-        Persona perso = repoPerso.findById(proye.getPersonaId()).orElse(null);
-        Proyecto nuevoProye = new Proyecto(perso, proye.getNombreProye(), proye.getDescripcionProye(), proye.getImgUrl(), proye.getRepoUrl(), proye.getLiveUrl());
+        Person perso = repoPerso.findById(proye.getPersonaId()).orElse(null);
+        Project nuevoProye = new Project(perso, proye.getNombreProye(), proye.getDescripcionProye(), proye.getImgUrl(), proye.getRepoUrl(), proye.getLiveUrl());
         repoProye.save(nuevoProye);
     }
 
@@ -27,12 +27,12 @@ public class ProyectoService implements IProyectoService {
         if (!repoProye.existsById(id)) {
             return false;
         } else {
-            Proyecto proyeEditado = repoProye.findById(id).orElse(null);
-            proyeEditado.setPersona(repoPerso.findById(proye.getPersonaId()).orElse(null));
-            proyeEditado.setNombreProye(proye.getNombreProye());
-            proyeEditado.setDescripcionProye(proye.getDescripcionProye());
+            Project proyeEditado = repoProye.findById(id).orElse(null);
+            proyeEditado.setPerson(repoPerso.findById(proye.getPersonaId()).orElse(null));
+            proyeEditado.setNameProject(proye.getNombreProye());
+            proyeEditado.setDescriptionProject(proye.getDescripcionProye());
             proyeEditado.setImgUrl(proye.getImgUrl());
-            proyeEditado.setRepoUrl(proye.getRepoUrl());
+            proyeEditado.setSourceCodeUrl(proye.getRepoUrl());
             proyeEditado.setLiveUrl(proye.getLiveUrl());
             repoProye.save(proyeEditado);
             return true;

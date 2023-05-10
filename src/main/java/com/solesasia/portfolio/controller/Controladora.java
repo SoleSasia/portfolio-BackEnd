@@ -66,8 +66,8 @@ public class Controladora {
     //para pruebas 
     @GetMapping ("/persona")
     @ResponseBody
-    public ResponseEntity<Persona> getPersona() {
-        Persona perso = serviPortfolio.getPersona();
+    public ResponseEntity<Person> getPerson() {
+        Person perso = serviPortfolio.getPerson();
         return new ResponseEntity<>(perso, HttpStatus.OK);
     }
      //para pruebas 

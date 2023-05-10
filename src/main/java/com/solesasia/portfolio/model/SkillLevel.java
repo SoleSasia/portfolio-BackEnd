@@ -4,36 +4,29 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class NivelHabilidad implements Serializable {
+public class SkillLevel implements Serializable {
     
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String nombreNivel;
-    
+    private String levelName;
     @JsonIgnore
-    @OneToMany(mappedBy = "nivel")
-    private List<HabilidadTecnica> habTecnicas;
- 
+    @OneToMany(mappedBy = "level")
+    private List<HardSkill> hardSkills;
 
-    public NivelHabilidad() {
+    public SkillLevel() {
     }
 
-    public NivelHabilidad(Long id, String nombreNivel) {
+    public SkillLevel(Long id, String levelName) {
         this.id = id;
-        this.nombreNivel = nombreNivel;
+        this.levelName = levelName;
     }
-
-    
-
 }

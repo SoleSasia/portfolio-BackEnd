@@ -8,14 +8,14 @@ import com.solesasia.portfolio.dto.HabTecnicaDto;
 import com.solesasia.portfolio.dto.PersoDto;
 import com.solesasia.portfolio.dto.PortfolioDto;
 import com.solesasia.portfolio.dto.ProyeDto;
-import com.solesasia.portfolio.model.Persona;
+import com.solesasia.portfolio.model.Person;
 import java.util.List;
 
 
 public interface IPortfolioService {
     
     //Lectura persona
-    public Persona getPersona();
+    public Person getPersona();
     
     //Modificar persona
     public boolean editarPersona(PersoDto perso);
