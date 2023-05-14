@@ -5,60 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d038be-ea29-4cba-833b-17bd4f12f226" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/dto/PortfolioDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/dto/PortfolioDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/dto/hardSkillDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/dto/HardSkillDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SoftSill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SoftSkill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SoftSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SoftSkillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/EducacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/EducationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ExperienciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ExperienceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/HabilidadBlandaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/SoftSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/HabilidadTecnicaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/HardSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IEducacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IEducationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IExperienciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IExperienceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IHabilidadBlandaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ISoftSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IHabilidadTecnicaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IHardSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IPortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IPortfolioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/PortfolioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/controller/Controladora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/controller/Controladora.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/EduDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/ExpeDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/HabBlandaDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/HabTecnicaDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PersoDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PortfolioDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PortfolioDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/ProyeDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/RespuestaDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Educacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Experiencia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadBlanda.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadTecnica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/NivelHabilidad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Persona.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Proyecto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/EducacionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/ExperienciaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/HabilidadBlandaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/HabilidadTecnicaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/NivelHabilidadRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/PersonaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/ProyectoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/EducacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/EducacionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/ExperienciaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/ExperienciaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadBlandaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadBlandaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadTecnicaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadTecnicaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IEducacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IEducacionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IExperienciaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IExperienciaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadBlandaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadBlandaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadTecnicaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadTecnicaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IPortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IPortfolioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IProyectoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/PortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/PortfolioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/ProyectoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
