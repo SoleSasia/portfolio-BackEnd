@@ -12,37 +12,36 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProjectService implements IProjectService {
 
-    @Autowired public ProjectRepository repoProye;
-    @Autowired public PersonRepository repoPerso;
+    @Autowired public ProjectRepository repoProject;
+    @Autowired public PersonRepository repoPerson;
     
     @Override
-    public void crearProyecto(ProjectDto proye) {
-        Person perso = repoPerso.findById(proye.getPersonId()).orElse(null);
-        Project nuevoProye = new Project(perso, proye.getName(), proye.getDescription(), proye.getImgUrl(), proye.getSourceCodeUrl(), proye.getLiveUrl());
-        repoProye.save(nuevoProye);
+    public void createProject(ProjectDto projectDto) {
+        Person person = repoPerson.findById(projectDto.getPersonId()).orElse(null);
+        Project newProject = new Project(person, projectDto.getName(), projectDto.getDescription(), 
+                projectDto.getImgUrl(), projectDto.getSourceCodeUrl(), projectDto.getLiveUrl());
+        repoProject.save(newProject);
     }
 
     @Override
-    public boolean editarProyecto(Long id, ProjectDto proye) {
-        if (!repoProye.existsById(id)) {
+    public boolean updateProject(Long id, ProjectDto projectDto) {
+        if (!repoProject.existsById(id)) {
             return false;
         } else {
-            Project proyeEditado = repoProye.findById(id).orElse(null);
-            proyeEditado.setPerson(repoPerso.findById(proye.getPersonId()).orElse(null));
-            proyeEditado.setNameProject(proye.getName());
-            proyeEditado.setDescriptionProject(proye.getDescription());
-            proyeEditado.setImgUrl(proye.getImgUrl());
-            proyeEditado.setSourceCodeUrl(proye.getSourceCodeUrl());
-            proyeEditado.setLiveUrl(proye.getLiveUrl());
-            repoProye.save(proyeEditado);
+            Project updatedProject = repoProject.findById(id).orElse(null);
+            updatedProject.setPerson(repoPerson.findById(projectDto.getPersonId()).orElse(null));
+            updatedProject.setNameProject(projectDto.getName());
+            updatedProject.setDescriptionProject(projectDto.getDescription());
+            updatedProject.setImgUrl(projectDto.getImgUrl());
+            updatedProject.setSourceCodeUrl(projectDto.getSourceCodeUrl());
+            updatedProject.setLiveUrl(projectDto.getLiveUrl());
+            repoProject.save(updatedProject);
             return true;
         }
     }
 
     @Override
-    public void borrarProyecto(Long id) {
-        repoProye.deleteById(id);
+    public void deleteProject(Long id) {
+        repoProject.deleteById(id);
     }
-
-    
 }

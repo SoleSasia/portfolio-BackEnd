@@ -10,18 +10,18 @@ public class PortfolioDto {
     private PersonDto person;
     private List<EducationDto> educationDtos;
     private List<ExperienceDto> experienceDtos;
-    private List<hardSkillDto> hardSkillDtos;
+    private List<HardSkillDto> HardSkillDtos;
     private List<SoftSkillDto> softSkillDtos;
     private List<ProjectDto> projectDtos;
 
     public PortfolioDto() {
     }
 
-    public PortfolioDto(PersonDto person, List<EducationDto> educationDtos, List<ExperienceDto> experienceDtos, List<hardSkillDto> hardSkillDtos, List<SoftSkillDto> softSkillDtos, List<ProjectDto> proyectos) {
+    public PortfolioDto(PersonDto person, List<EducationDto> educationDtos, List<ExperienceDto> experienceDtos, List<HardSkillDto> HardSkillDtos, List<SoftSkillDto> softSkillDtos, List<ProjectDto> proyectos) {
         this.person = person;
         this.educationDtos = educationDtos;
         this.experienceDtos = experienceDtos;
-        this.hardSkillDtos = hardSkillDtos;
+        this.HardSkillDtos = HardSkillDtos;
         this.softSkillDtos = softSkillDtos;
         this.projectDtos = proyectos;
     }

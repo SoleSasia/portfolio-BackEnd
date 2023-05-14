@@ -29,7 +29,7 @@ public class Person {
     @OneToMany(mappedBy = "person")
     private List<HardSkill> hardSkills;
     @OneToMany(mappedBy = "person")
-    private List<SoftSill> softSkills;
+    private List<SoftSkill> softSkills;
     @OneToMany(mappedBy = "person")
     private List<Project> projects;
 
@@ -53,7 +53,7 @@ public class Person {
     public Person(Long id, String name, String occupation, String homeBannerUrl, String email, String linkedinUrl,
                   String githubUrl, String description, String profilePicUrl, List<Education> educations,
                   List<Experience> experiences, List<HardSkill> hardSkills,
-                  List<SoftSill> softSkills, List<Project> projects) {
+                  List<SoftSkill> softSkills, List<Project> projects) {
         this.id = id;
         this.name = name;
         this.occupation = occupation;

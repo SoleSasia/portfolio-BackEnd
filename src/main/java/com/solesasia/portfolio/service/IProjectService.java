@@ -6,10 +6,10 @@ import com.solesasia.portfolio.dto.ProjectDto;
 
 public interface IProjectService {
     
-    public void crearProyecto(ProjectDto proyecto);
+    public void createProject(ProjectDto projectDto);
     
-    public boolean editarProyecto(Long id, ProjectDto proyecto);
+    public boolean updateProject(Long id, ProjectDto projectDto);
     
-    public void borrarProyecto(Long id);
+    public void deleteProject(Long id);
     
 }

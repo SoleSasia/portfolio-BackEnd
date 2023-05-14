@@ -6,26 +6,25 @@ import com.solesasia.portfolio.dto.EducationDto;
 import com.solesasia.portfolio.model.Person;
 import java.util.List;
 
-
 public interface IPortfolioService {
     
     //Lectura persona
-    public Person getPersona();
+    public Person getPerson();
     
     //Modificar persona
-    public boolean editarPersona(PersonDto perso);
+    public boolean updatePerson(PersonDto personDto);
     
-    public PersonDto getPersoDto();
+    public PersonDto getPersonDto();
     
-    public List<EducationDto> listarEduDto();
+    public List<EducationDto> getEducationsDto();
     
-    public List<ExperienceDto> listarExpeDto();
+    public List<ExperienceDto> getExperiencesDto();
     
-    public List<hardSkillDto> listarHabTecnicaDto();
+    public List<HardSkillDto> getHardSkillsDto();
     
-    public List<SoftSkillDto> listarHabBlandaDto();
+    public List<SoftSkillDto> getSoftSkillsDto();
     
-    public List<ProjectDto> listarProyeDto();
+    public List<ProjectDto> getProjectsDto();
    
     //Lectura porfolio
     public PortfolioDto getPortfolio();

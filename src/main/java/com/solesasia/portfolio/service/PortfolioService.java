@@ -19,123 +19,122 @@ import org.springframework.stereotype.Service;
 public class PortfolioService implements IPortfolioService {
     
     //inyecta las dependencias necesarias
-    @Autowired public PersonRepository repoPersona;
-    @Autowired public EducationRepository repoEdu;
-    @Autowired public ExperienceRepository repoExpe;
-    @Autowired public HardSkillRepository repoTecnica;
-    @Autowired public SoftSkillRepository repoBlanda;
-    @Autowired public ProjectRepository repoProye;
-    
+    @Autowired public PersonRepository repoPerson;
+    @Autowired public EducationRepository repoEducation;
+    @Autowired public ExperienceRepository repoExperience;
+    @Autowired public HardSkillRepository repoHardSkill;
+    @Autowired public SoftSkillRepository repoSoftSkill;
+    @Autowired public ProjectRepository repoProject;
     
     @Override
     public PortfolioDto getPortfolio() {
 
         // recupera los datos desde la persistencia
-        PersonDto personDto = this.getPersoDto();
-        List<EducationDto> listaEducationDto = this.listarEduDto();
-        List<ExperienceDto> listaExperienceDto = this.listarExpeDto();
-        List<hardSkillDto> listaHardSkillDto = this.listarHabTecnicaDto();
-        List<SoftSkillDto> listaSoftSkillDto = this.listarHabBlandaDto();
-        List<ProjectDto> listaProjectDto = this.listarProyeDto();
+        PersonDto personDto = this.getPersonDto();
+        List<EducationDto> educationsDto = this.getEducationsDto();
+        List<ExperienceDto> experiencesDto = this.getExperiencesDto();
+        List<HardSkillDto> hardSkillsDto = this.getHardSkillsDto();
+        List<SoftSkillDto> softSkillsDto = this.getSoftSkillsDto();
+        List<ProjectDto> projectsDto = this.getProjectsDto();
         
         // asigna los datos recuperados al portfolio
         PortfolioDto portfolio = new PortfolioDto();
         //datos de persona
         portfolio.setPerson(personDto);
         //listas de secciones
-        portfolio.setEducationDtos(listaEducationDto);
-        portfolio.setExperienceDtos(listaExperienceDto);
-        portfolio.setHardSkillDtos(listaHardSkillDto);
-        portfolio.setSoftSkillDtos(listaSoftSkillDto);
-        portfolio.setProjectDtos(listaProjectDto);
+        portfolio.setEducationDtos(educationsDto);
+        portfolio.setExperienceDtos(experiencesDto);
+        portfolio.setHardSkillDtos(hardSkillsDto);
+        portfolio.setSoftSkillDtos(softSkillsDto);
+        portfolio.setProjectDtos(projectsDto);
 
         // entrega portfolio
         return portfolio;
     }
     
     @Override
-    public Person getPersona() {
-        long personaId = 1; //"Harcodeo" id de la única persona disponible
-        Person perso = repoPersona.findById(personaId).orElse(null);
-        return perso;
+    public Person getPerson() {
+        long personId = 1; //"Harcodeo" id de la única persona disponible
+        Person person = repoPerson.findById(personId).orElse(null);
+        return person;
     }
     
     @Override
-    public PersonDto getPersoDto() {
-        Person perso = this.getPersona();
-        PersonDto personDto = new PersonDto(perso.getId(),perso.getName(), perso.getOccupation(),perso.getHomeBannerUrl(),perso.getEmail(),perso.getLinkedinUrl(),perso.getGithubUrl(),perso.getDescription(),perso.getProfilePicUrl());
+    public PersonDto getPersonDto() {
+        Person person = this.getPerson();
+        PersonDto personDto = new PersonDto(person.getId(),person.getName(), person.getOccupation(),person.getHomeBannerUrl(),person.getEmail(),person.getLinkedinUrl(),person.getGithubUrl(),person.getDescription(),person.getProfilePicUrl());
         return personDto;
     }
 
     @Override
-    public boolean editarPersona(PersonDto perso) {
-        if (!repoPersona.existsById(perso.getId())){
+    public boolean updatePerson(PersonDto personDto) {
+        if (!repoPerson.existsById(personDto.getId())){
             return false;
         } else {
-            Person persoEditada = new Person(perso.getId(), perso.getName(), perso.getOccupation(), perso.getHomeBannerUrl(), perso.getEmail(), perso.getLinkedinUrl(), perso.getGithubUrl(), perso.getDescription(), perso.getImgUrl());
-            repoPersona.save(persoEditada);
+            Person updatedPerson = new Person(personDto.getId(), personDto.getName(), personDto.getOccupation(), personDto.getHomeBannerUrl(), personDto.getEmail(), personDto.getLinkedinUrl(), personDto.getGithubUrl(), personDto.getDescription(), personDto.getImgUrl());
+            repoPerson.save(updatedPerson);
             return true;
         }
     }
     
     @Override
-    public List<EducationDto> listarEduDto() {
-        List<Education> listaEdu = repoEdu.findAll();
-        List<EducationDto> listaEducationDto = new ArrayList<EducationDto>();
-        for (int i = 0; i < listaEdu.size(); i++) {
-            Education edu = listaEdu.get(i);
-            EducationDto educationDto = new EducationDto(edu.getId(), edu.getPerson().getId(), edu.getTitle(), edu.getPeriod(), edu.getInstitution(), edu.getDescription(), edu.getLogoUrl());
-            listaEducationDto.add(educationDto);
+    public List<EducationDto> getEducationsDto() {
+        List<Education> educationAll = repoEducation.findAll();
+        List<EducationDto> educationsDto = new ArrayList<EducationDto>();
+        for (int i = 0; i < educationAll.size(); i++) {
+            Education education = educationAll.get(i);
+            EducationDto educationDto = new EducationDto(education.getId(), education.getPerson().getId(), education.getTitle(), education.getPeriod(), education.getInstitution(), education.getDescription(), education.getLogoUrl());
+            educationsDto.add(educationDto);
         }
-        return listaEducationDto;
+        return educationsDto;
     }
     
     @Override
-    public List<ExperienceDto> listarExpeDto() {
-        List<Experience> listaExpe = repoExpe.findAll();
-        List<ExperienceDto> listaExperienceDto = new ArrayList<ExperienceDto>();
-        for (int i = 0; i < listaExpe.size(); i++) {
-            Experience expe = listaExpe.get(i);
-            ExperienceDto experienceDto = new ExperienceDto(expe.getId(), expe.getPerson().getId(), expe.getPosition(), expe.getPeriod(), expe.getCompany(), expe.getDescription(), expe.getLogoUrl());
-            listaExperienceDto.add(experienceDto);
+    public List<ExperienceDto> getExperiencesDto() {
+        List<Experience> experienceAll = repoExperience.findAll();
+        List<ExperienceDto> experiencesDto = new ArrayList<ExperienceDto>();
+        for (int i = 0; i < experienceAll.size(); i++) {
+            Experience experience = experienceAll.get(i);
+            ExperienceDto experienceDto = new ExperienceDto(experience.getId(), experience.getPerson().getId(), experience.getPosition(), experience.getPeriod(), experience.getCompany(), experience.getDescription(), experience.getLogoUrl());
+            experiencesDto.add(experienceDto);
         }
-        return listaExperienceDto;
+        return experiencesDto;
     }
     
     @Override
-    public List<hardSkillDto> listarHabTecnicaDto() {
-        List<HardSkill> listaHabTecnica = repoTecnica.findAll();
-        List<hardSkillDto> listaHardSkillDto = new ArrayList<hardSkillDto>();
-        for (int i = 0; i < listaHabTecnica.size(); i++) {
-            HardSkill habTecnica = listaHabTecnica.get(i);
-            hardSkillDto hardSkillDto = new hardSkillDto(habTecnica.getId(), habTecnica.getPerson().getId(), habTecnica.getLevel().getId(), habTecnica.getSkillName(), habTecnica.getIconUrl());
-            listaHardSkillDto.add(hardSkillDto);
+    public List<HardSkillDto> getHardSkillsDto() {
+        List<HardSkill> hardSkillAll = repoHardSkill.findAll();
+        List<HardSkillDto> hardSkillsDto = new ArrayList<HardSkillDto>();
+        for (int i = 0; i < hardSkillAll.size(); i++) {
+            HardSkill hardSkill = hardSkillAll.get(i);
+            HardSkillDto hardSkillDto = new HardSkillDto(hardSkill.getId(), hardSkill.getPerson().getId(), hardSkill.getLevel().getId(), hardSkill.getSkillName(), hardSkill.getIconUrl());
+            hardSkillsDto.add(hardSkillDto);
         }
-        return listaHardSkillDto;
+        return hardSkillsDto;
     }
     
     @Override
-    public List<SoftSkillDto> listarHabBlandaDto() {
-        List<SoftSill> listahabBlanda = repoBlanda.findAll();
-        List<SoftSkillDto> listaSoftSkillDto = new ArrayList<SoftSkillDto>();
-        for (int i = 0; i < listahabBlanda.size(); i++) {
-            SoftSill habBlanda = listahabBlanda.get(i);
-            SoftSkillDto softSkillDto = new SoftSkillDto(habBlanda.getId(), habBlanda.getPerson().getId(), habBlanda.getSkillName(), habBlanda.getIconUrl());
-            listaSoftSkillDto.add(softSkillDto);
+    public List<SoftSkillDto> getSoftSkillsDto() {
+        List<SoftSkill> softSkillAll = repoSoftSkill.findAll();
+        List<SoftSkillDto> softSkillsDto = new ArrayList<SoftSkillDto>();
+        for (int i = 0; i < softSkillAll.size(); i++) {
+            SoftSkill softSkill = softSkillAll.get(i);
+            SoftSkillDto softSkillDto = new SoftSkillDto(softSkill.getId(), softSkill.getPerson().getId(), softSkill.getSkillName(), softSkill.getIconUrl());
+            softSkillsDto.add(softSkillDto);
         }
-        return listaSoftSkillDto;
+        return softSkillsDto;
     }
     
     @Override
-    public List<ProjectDto> listarProyeDto() {
-        List<Project> listaProye = repoProye.findAll();
-        List<ProjectDto> listaProjectDto = new ArrayList<ProjectDto>();
-        for (int i = 0; i < listaProye.size(); i++) {
-            Project proye = listaProye.get(i);
-            ProjectDto projectDto = new ProjectDto(proye.getId(), proye.getPerson().getId(), proye.getNameProject(), proye.getDescriptionProject(), proye.getImgUrl(), proye.getSourceCodeUrl(), proye.getLiveUrl());
-            listaProjectDto.add(projectDto);
+    public List<ProjectDto> getProjectsDto() {
+        List<Project> projectAll = repoProject.findAll();
+        List<ProjectDto> projectsDto = new ArrayList<ProjectDto>();
+        for (int i = 0; i < projectAll.size(); i++) {
+            Project project = projectAll.get(i);
+            ProjectDto projectDto = new ProjectDto(project.getId(), project.getPerson().getId(), project.getNameProject(), project.getDescriptionProject(), project.getImgUrl(), project.getSourceCodeUrl(), project.getLiveUrl());
+            projectsDto.add(projectDto);
         }
-        return listaProjectDto;
+        return projectsDto;
     }
     
 }
