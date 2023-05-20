@@ -5,12 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d038be-ea29-4cba-833b-17bd4f12f226" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/solesasia/portfolio/services/EducationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controllers/PortfolioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Education.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Education.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Experience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Experience.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/HardSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/HardSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SkillLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/SkillLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SoftSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/SoftSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/EducationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/EducationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/ExperienceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/ExperienceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/HardSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/HardSkillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/PersonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SkillLevelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/SkillLevelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SoftSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/SoftSkillRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/EducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/EducationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ExperienceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/HardSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/HardSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IEducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IEducationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IExperienceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IHardSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IHardSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IPortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IPortfolioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ISoftSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ISoftSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/PortfolioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/SoftSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/SoftSkillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,6 +69,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2KIK2hPwF5TegSEExU4VIoVEI1x" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,10 +81,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/soles/Develop/portfolio-BackEnd&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.solesasia.portfolio.service" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PortfolioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.PortfolioApplication" />
@@ -95,5 +146,16 @@
     <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
     <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
