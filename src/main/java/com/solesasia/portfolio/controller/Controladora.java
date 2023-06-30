@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @RestController
-@CrossOrigin (origins = "http://localhost:4200/", maxAge = 3600)
+@CrossOrigin (origins = "${url.frontend}", maxAge = 3600)
 public class Controladora {
     
     //inyecta las dependencias necesarias para ejecutar las peticiones que vengan del cliente
