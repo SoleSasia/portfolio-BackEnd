@@ -83,7 +83,9 @@ public class PortfolioService implements IPortfolioService {
         List<EducationDto> educationsDto = new ArrayList<EducationDto>();
         for (int i = 0; i < educationAll.size(); i++) {
             Education education = educationAll.get(i);
-            EducationDto educationDto = new EducationDto(education.getId(), education.getPerson().getId(), education.getTitle(), education.getPeriod(), education.getInstitution(), education.getDescription(), education.getLogoUrl());
+            EducationDto educationDto = new EducationDto(education.getId(), education.getPerson().getId(),
+                    education.getTitle(), education.getPeriod(), education.getInstitution(),
+                    education.getDescription(), education.getLogoUrl());
             educationsDto.add(educationDto);
         }
         return educationsDto;

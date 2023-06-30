@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import com.solesasia.portfolio.repositories.EducationRepository;
 import com.solesasia.portfolio.repositories.PersonRepository;
 
-//esta clase implementa la interfaz donde están declarados los métodos CRUD
+import java.util.List;
+
 @Service
 public class EducationService implements IEducationService {
 
@@ -22,7 +23,8 @@ public class EducationService implements IEducationService {
     @Override
     public void createEducation(EducationDto educationDto) {
         Person person = repoPerson.findById(educationDto.getPersonId()).orElse(null);
-        Education newEducation = new Education(person, educationDto.getTitle(), educationDto.getPeriod(), educationDto.getInstitution(), educationDto.getDescription(), educationDto.getLogoUrl());
+        Education newEducation = new Education(person, educationDto.getTitle(), educationDto.getPeriod(),
+                educationDto.getInstitution(), educationDto.getDescription(), educationDto.getLogoUrl());
         repoEducation.save(newEducation);
     }
 

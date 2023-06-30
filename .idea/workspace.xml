@@ -5,37 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d038be-ea29-4cba-833b-17bd4f12f226" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/solesasia/portfolio/services/EducationServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controllers/PortfolioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Education.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Education.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Experience.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Experience.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/HardSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/HardSkill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SkillLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/SkillLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/model/SoftSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/models/SoftSkill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/EducationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/EducationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/ExperienceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/ExperienceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/HardSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/HardSkillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SkillLevelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/SkillLevelRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repository/SoftSkillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/repositories/SoftSkillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/EducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/EducationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ExperienceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/HardSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/HardSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IEducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IEducationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IExperienceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IExperienceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IHardSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IHardSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IPortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IPortfolioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/IProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/IProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ISoftSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ISoftSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/PortfolioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/service/SoftSkillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/SoftSkillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/EducationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/EducationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/PortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/services/PortfolioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/solesasia/portfolio/services/EducationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solesasia/portfolio/services/EducationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/services/EducationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/services/EducationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/services/PortfolioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/services/PortfolioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -92,10 +68,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.solesasia.portfolio.controllers" />
       <recent name="com.solesasia.portfolio.service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.EducationControllerTest">
     <configuration name="PortfolioApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.PortfolioApplication" />
       <module name="portfolio" />
@@ -105,6 +82,68 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solesasia.portfolio.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solesasia.portfolio.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.controllers.EducationControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationControllerTest.addEducation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solesasia.portfolio.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solesasia.portfolio.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.controllers.EducationControllerTest" />
+      <option name="METHOD_NAME" value="addEducation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solesasia.portfolio.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solesasia.portfolio.services" />
+      <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.services.EducationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationServiceTest.createEducation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="portfolio" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solesasia.portfolio.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solesasia.portfolio.services" />
+      <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.services.EducationServiceTest" />
+      <option name="METHOD_NAME" value="createEducation(com.solesasia.portfolio.dto.EducationDto)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -124,7 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EducationControllerTest" />
+        <item itemvalue="JUnit.EducationServiceTest" />
         <item itemvalue="Application.PortfolioApplication" />
+        <item itemvalue="JUnit.EducationServiceTest.createEducation" />
+        <item itemvalue="JUnit.EducationControllerTest.addEducation" />
       </list>
     </recent_temporary>
   </component>
