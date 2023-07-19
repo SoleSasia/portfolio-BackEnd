@@ -1,8 +1,8 @@
 com/solesasia/portfolio/service/IPortfolioService.class
 com/solesasia/portfolio/repository/HabilidadTecnicaRepository.class
 com/solesasia/portfolio/service/IHabilidadBlandaService.class
-com/solesasia/portfolio/model/Proyecto.class
 com/solesasia/portfolio/repository/ExperienciaRepository.class
+com/solesasia/portfolio/model/Proyecto.class
 com/solesasia/portfolio/repository/NivelHabilidadRepository.class
 com/solesasia/portfolio/model/HabilidadTecnica.class
 com/solesasia/portfolio/repository/ProyectoRepository.class
@@ -18,14 +18,14 @@ com/solesasia/portfolio/model/Experiencia.class
 com/solesasia/portfolio/dto/EduDto.class
 com/solesasia/portfolio/dto/HabTecnicaDto.class
 com/solesasia/portfolio/dto/ProyeDto.class
-com/solesasia/portfolio/controller/Controladora.class
 com/solesasia/portfolio/service/ExperienciaService.class
+com/solesasia/portfolio/controller/Controladora.class
 com/solesasia/portfolio/service/PortfolioService.class
 com/solesasia/portfolio/service/IHabilidadTecnicaService.class
 com/solesasia/portfolio/dto/ExpeDto.class
 com/solesasia/portfolio/model/Persona.class
-com/solesasia/portfolio/model/HabilidadBlanda.class
 com/solesasia/portfolio/repository/HabilidadBlandaRepository.class
+com/solesasia/portfolio/model/HabilidadBlanda.class
 com/solesasia/portfolio/repository/EducacionRepository.class
 com/solesasia/portfolio/dto/PersoDto.class
 com/solesasia/portfolio/model/NivelHabilidad.class
