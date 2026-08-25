@@ -5,17 +5,60 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52d038be-ea29-4cba-833b-17bd4f12f226" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/PortfolioApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/PortfolioApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solesasia/portfolio/controller/Controladora.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/controller/Controladora.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/controller/Controladora.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/PortfolioApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/PortfolioApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/controller/Controladora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/EduDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/ExpeDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/HabBlandaDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/HabTecnicaDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PersoDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PersoDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/PortfolioDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/ProyeDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/dto/RespuestaDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Educacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Educacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Experiencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Experiencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadBlanda.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadBlanda.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadTecnica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/HabilidadTecnica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/NivelHabilidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/NivelHabilidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Persona.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Persona.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Proyecto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/model/Proyecto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/EducacionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/ExperienciaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/HabilidadBlandaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/HabilidadTecnicaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/NivelHabilidadRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/PersonaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/ProyectoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/repository/ProyectoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/EducacionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/ExperienciaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadBlandaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/HabilidadTecnicaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IEducacionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IExperienciaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadBlandaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IHabilidadTecnicaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IPortfolioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/IProyectoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/PortfolioService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/solesasia/portfolio/service/ProyectoService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/portfolio-0.0.1-SNAPSHOT.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/portfolio-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.solesasia.portfolio.PortfolioApplicationTests.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.solesasia.portfolio.PortfolioApplicationTests.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solesasia/portfolio/PortfolioApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,39 +66,74 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SoleSasia&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SoleSasia/portfolio-BackEnd.git&quot;,
+    &quot;accountId&quot;: &quot;7e58ce66-5e73-4525-963b-392e46e16859&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.22/spring-web-5.3.22.jar!/org/springframework/http/ResponseEntity.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2KIK2hPwF5TegSEExU4VIoVEI1x" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/soles/Develop/portfolio-BackEnd",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Portfolio.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.portfolio [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.portfolio [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.portfolio [site].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PortfolioApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hotfix/error-db-conexion&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/soledadsasia/MyProjects/portfolio-BackEnd&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/other files" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="portfolio-BackEnd" />
+    <configuration name="Portfolio" type="Application" factoryName="Application">
+      <envs>
+        <env name="DB_HOST" value="bgst2kxsctadbka1ywlm-mysql.services.clever-cloud.com" />
+        <env name="DB_NAME" value="bgst2kxsctadbka1ywlm" />
+        <env name="DB_PASSWORD" value="78g5ltWlo2O1fd6F6W3s" />
+        <env name="DB_PORT" value="3306" />
+        <env name="DB_USER" value="u4l2vvd9nckmn8z1" />
+        <env name="URL_FRONT" value="https://soledadsasia.ar" />
+        <env name="DB_URL" value="jdbc:mysql://bgst2kxsctadbka1ywlm-mysql.services.clever-cloud.com:3306/bgst2kxsctadbka1ywlm?useSSL=true&amp;requireSSL=true&amp;verifyServerCertificate=false&amp;serverTimezone=UTC" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.solesasia.portfolio.PortfolioApplication" />
+      <module name="portfolio" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,6 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,5 +171,20 @@
     <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
     <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

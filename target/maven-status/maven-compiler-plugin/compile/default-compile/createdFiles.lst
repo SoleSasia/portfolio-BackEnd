@@ -9,8 +9,8 @@ com/solesasia/portfolio/repository/ProyectoRepository.class
 com/solesasia/portfolio/service/IProyectoService.class
 com/solesasia/portfolio/service/EducacionService.class
 com/solesasia/portfolio/model/Educacion.class
-com/solesasia/portfolio/repository/PersonaRepository.class
 com/solesasia/portfolio/dto/HabBlandaDto.class
+com/solesasia/portfolio/repository/PersonaRepository.class
 com/solesasia/portfolio/service/IExperienciaService.class
 com/solesasia/portfolio/service/ProyectoService.class
 com/solesasia/portfolio/service/IEducacionService.class
@@ -18,8 +18,8 @@ com/solesasia/portfolio/model/Experiencia.class
 com/solesasia/portfolio/dto/EduDto.class
 com/solesasia/portfolio/dto/HabTecnicaDto.class
 com/solesasia/portfolio/dto/ProyeDto.class
-com/solesasia/portfolio/service/ExperienciaService.class
 com/solesasia/portfolio/controller/Controladora.class
+com/solesasia/portfolio/service/ExperienciaService.class
 com/solesasia/portfolio/service/PortfolioService.class
 com/solesasia/portfolio/service/IHabilidadTecnicaService.class
 com/solesasia/portfolio/dto/ExpeDto.class
